@@ -87,11 +87,34 @@
 #define iPhone5_down  (([UIScreen mainScreen].bounds.size.height <= 568)?YES: NO)
 #define iPhone6_down  (([UIScreen mainScreen].bounds.size.height <= 667)?YES: NO)
 
-#define iphoneX ((ScreenWidth == 375.0f && ScreenHeight == 812.0f)? YES : NO)
+#define iphoneX (((ScreenWidth == 375.0f && ScreenHeight == 812.0f) || (ScreenWidth == 414.0f && ScreenHeight == 896.0f))? YES : NO)
 #define YCNavbar_Height (iphoneX ? 88.0f : 64.0f)
 #define YCNavbar_DiffH  (iphoneX ? 24.0f : 0.0f)
-#define YCTabbar_height (iphoneX ? 84.0f : 50.0f)
+#define YCTabbar_Height (iphoneX ? 83.0f : 49.0f)
 #define YCTabBar_DiffH  (iphoneX ? 34.0f : 0.0f)
+
+
+//获得屏幕的宽高
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
+//iPhoneX / iPhoneXS
+#define  isIphoneX_XS       (kScreenWidth == 375.f && kScreenHeight == 812.f ? YES : NO)
+//iPhoneXR / iPhoneXSMax
+#define  isIphoneXR_XSMax   (kScreenWidth == 414.f && kScreenHeight == 896.f ? YES : NO)
+//异性全面屏
+#define  isFullScreen       (isIphoneX_XS || isIphoneXR_XSMax)
+// Status bar height.
+#define  StatusBarHeight    (isFullScreen ? 44.f : 20.f)
+// Navigation bar height.
+#define  NavigationBarHeight    44.f
+// Status bar & navigation bar height.
+#define  StatusBarAndNavigationBarHeight    (isFullScreen ? 88.f : 64.f)
+// Tabbar height.
+#define  TabbarHeight       (isFullScreen ? (49.f+34.f) : 49.f)
+// Tabbar safe bottom margin.
+#define  TabbarSafeBottomMargin (isFullScreen ? 34.f : 0.f)
+
+
 
 #define KEYCHAIN_SERVICE_NAME       @"com.xxx.xx"
 #define KEYCHAIN_ACCOUNT_UUID       @"keychain_account_uuid.com.xxx.xx"

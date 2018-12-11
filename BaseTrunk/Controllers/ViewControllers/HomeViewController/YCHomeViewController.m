@@ -42,9 +42,12 @@
     if (translucent) {
         [self.navigationController.navigationBar setTranslucent:YES];
         [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"translate"] stretchableImageWithLeftCapWidth:10 topCapHeight:10] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+        
+        [self.tabBarController.tabBar setTranslucent:YES];
+        [self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"translate"]];
     } else {
         [self.navigationController.navigationBar setTranslucent:NO];
+        [self.tabBarController.tabBar setTranslucent:NO];
     }
 }
 
@@ -55,8 +58,19 @@
 
 - (void)rightBarButtonItemClick
 {
-    [self.recommendViewController changeShowType:self.navigationController.navigationBar.translucent ? ShowTypeGrid : ShowTypeList];
     [self navigationBarTranslucent:!self.navigationController.navigationBar.translucent];
+
+    if (self.navigationController.navigationBar.translucent) {
+        self.recommendViewController.view.frame = CGRectMake(0, 0, ScreenWidth, kScreenHeight);
+        self.recommendViewController.collectionView.frame = self.recommendViewController.view.bounds;
+        self.recommendViewController.collectionView.pagingEnabled = YES;
+    } else {
+        self.recommendViewController.view.frame = CGRectMake(0, 0, ScreenWidth, kScreenHeight - TabbarHeight - StatusBarAndNavigationBarHeight);
+        self.recommendViewController.collectionView.frame = self.recommendViewController.view.bounds;
+        self.recommendViewController.collectionView.pagingEnabled = NO;
+    }
+    
+    [self.recommendViewController changeShowType:!self.navigationController.navigationBar.translucent ? ShowTypeGrid : ShowTypeList];
 }
 
 - (void)addChildViewController
@@ -69,6 +83,12 @@
     
     [_recommendViewController didMoveToParentViewController:self];
     [_nearbyViewController didMoveToParentViewController:self];
+    
+    self.recommendViewController.view.frame = CGRectMake(0, 0, ScreenWidth, kScreenHeight - TabbarHeight - StatusBarAndNavigationBarHeight);
+    self.recommendViewController.collectionView.frame = self.recommendViewController.view.bounds;
+    
+    self.nearbyViewController.view.frame = CGRectMake(0, 0, ScreenWidth, kScreenHeight - TabbarHeight - StatusBarAndNavigationBarHeight);
+    self.nearbyViewController.tableView.frame = self.nearbyViewController.view.bounds;
     
     _tempViewController = _recommendViewController;
     self.selectedIndex = 0;
@@ -106,6 +126,18 @@
 
 - (void)segmentedControlChangedValue:(HMSegmentedControl *)segmented
 {
+    if (segmented.selectedSegmentIndex == 1) {
+        self.navigationItem.rightBarButtonItem = nil;
+        [self navigationBarTranslucent:NO];
+        self.nearbyViewController.view.frame = CGRectMake(0, 0, ScreenWidth, kScreenHeight - TabbarHeight - StatusBarAndNavigationBarHeight);
+        self.nearbyViewController.tableView.frame = self.nearbyViewController.view.bounds;
+    } else {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"8"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemClick)];
+        if (self.recommendViewController.showType == ShowTypeList) {
+            [self navigationBarTranslucent:YES];
+        }
+    }
+    
     WYTableApiViewController *newViewController = [self.childViewControllers objectAtIndex:self.segmentedControl.selectedSegmentIndex];
     [self transitionFromViewController:_tempViewController toViewController:newViewController duration:0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
         
@@ -113,17 +145,8 @@
         [self.view addSubview:newViewController.view];
         self.tempViewController = newViewController;
     }];
-    
-    if (segmented.selectedSegmentIndex == 1) {
-        self.navigationItem.rightBarButtonItem = nil;
-        [self navigationBarTranslucent:NO];
-    } else {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"8"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemClick)];
-        if (self.recommendViewController.showType == ShowTypeList) {
-            [self navigationBarTranslucent:YES];
-        }
-    }
 }
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

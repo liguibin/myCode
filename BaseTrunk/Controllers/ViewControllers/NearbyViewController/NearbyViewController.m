@@ -15,6 +15,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.backgroundColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
 }
 
 - (id)paramsObject:(BOOL)more

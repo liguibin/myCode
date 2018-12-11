@@ -25,13 +25,14 @@
     
 + (id)customNavigationController:(UINavigationController *)navigationController
 {
-    UIColor *color = [UIColor colorWithRed:74./255. green:74./255. blue:74./255. alpha:1.];
-    navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    navigationController.navigationBar.tintColor = [UIColor blackColor];
+//    navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    navigationController.navigationBar.barTintColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+
     [navigationController.navigationBar setTranslucent:NO];
-    
+    [navigationController.navigationBar setShadowImage:[UIImage new]];
+
     if (navigationController.tabBarItem.title) {
-        NSDictionary *navibarTextDic = [NSDictionary dictionaryWithObjectsAndKeys:color,  NSForegroundColorAttributeName, [UIFont systemFontOfSize:16.], NSFontAttributeName,nil];
+        NSDictionary *navibarTextDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],  NSForegroundColorAttributeName, [UIFont systemFontOfSize:16.], NSFontAttributeName,nil];
         navigationController.navigationBar.titleTextAttributes = navibarTextDic;
         
         [navigationController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.85 alpha:1.], NSFontAttributeName:[UIFont systemFontOfSize:16.]} forState:UIControlStateNormal];

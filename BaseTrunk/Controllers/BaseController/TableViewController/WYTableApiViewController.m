@@ -93,8 +93,6 @@
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.backgroundColor = [UIColor whiteColor];
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
-    _tableView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:_tableView];
     
     if (@available(iOS 11.0, *)) {

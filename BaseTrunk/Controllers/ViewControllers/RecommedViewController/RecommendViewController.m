@@ -9,8 +9,8 @@
 #import "RecommendViewController.h"
 #import "YCRecommedGridCell.h"
 #import "YCRecommedListCell.h"
-#import "WYCollectionViewGridLayout.h"
 #import "YCVideoListObject.h"
+#import "WYCollectionViewGridLayout.h"
 
 @interface RecommendViewController ()
 
@@ -25,9 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.collectionView.backgroundColor = [UIColor clearColor];
-    self.collectionView.pagingEnabled = YES;
-    self.collectionView.showsVerticalScrollIndicator = NO;
+    self.collectionView.backgroundColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+    self.collectionView.showsVerticalScrollIndicator = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     
     self.showType = ShowTypeGrid;
@@ -47,6 +46,7 @@
     if (!_collectionlayout) {
         _collectionlayout = [[WYCollectionViewGridLayout alloc] init];
     }
+    
     if (self.showType == ShowTypeList) {
         _collectionlayout.numberOfItemsPerLine = 1;
         _collectionlayout.aspectRatio = ScreenWidth / ScreenHeight;
@@ -55,12 +55,17 @@
         _collectionlayout.lineSpacing = 0;
     } else {
         _collectionlayout.numberOfItemsPerLine = 3;
-        _collectionlayout.aspectRatio = 1;
-        _collectionlayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
-        _collectionlayout.interitemSpacing = 10;
-        _collectionlayout.lineSpacing = 10;
+        _collectionlayout.aspectRatio = 105. / 131.;
+        _collectionlayout.sectionInset = UIEdgeInsetsMake(5., 15., 0., 15.);
+        _collectionlayout.interitemSpacing = 15;
+        _collectionlayout.lineSpacing = 15;
     }
     return _collectionlayout;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
 }
 
 - (id)paramsObject:(BOOL)more

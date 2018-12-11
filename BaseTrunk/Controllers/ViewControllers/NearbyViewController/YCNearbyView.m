@@ -71,6 +71,7 @@
 
 - (void)setObject:(id)item {
     [self.avatarView sd_setImageWithURL:[WYConfig getImageUrl:[item objectForKey:@"coverUrl"]] placeholderImage:[UIImage imageNamed:iphoneX?@"xwaiting_page":@"waiting_page"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
+    [self.nameLabel setText:[item objectForKey:@"nickname"]];
 }
 
 + (CGFloat)rowHeightForObject:(id)item {

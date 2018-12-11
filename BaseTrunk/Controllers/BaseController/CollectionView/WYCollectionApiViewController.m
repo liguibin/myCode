@@ -37,7 +37,6 @@
     return @"";
 }
 
-
 - (NSString *)errorDetailString
 {
     return @"";
@@ -63,15 +62,13 @@
     [_collectionView setDelegate:self];
     [_collectionView setDataSource:self];
     [_collectionView setBackgroundColor:[UIColor whiteColor]];
-    [_collectionView setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin];
-    [_collectionView setContentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:_collectionView];
     
     if (@available(iOS 11.0, *)) {
         [self.collectionView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     } else {
         // Fallback on earlier versions
-        //        self.automaticallyAdjustsScrollViewInsets = NO;
+                self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
     [self activityIndicatorAnimal:YES];
@@ -158,7 +155,7 @@
             _refresh.tintColor = [UIColor black75PercentColor];
             [_collectionView addSubview:_refresh];
         }
-    }else {
+    } else {
         if (self.refresh && self.refresh.superview) {
             [self.refresh removeFromSuperview];
         }
@@ -299,10 +296,7 @@
     }
     
     [self setEnableFooter:NO];
-    
-    
     [self.errorView setHidden:YES];
-    
     
     NSString *strFailText = NSLocalizedString(@"networking_disconnect",nil);
     if ([error.domain isEqualToString:ERROR_DOMAIN]) {
@@ -332,8 +326,6 @@
         [self.errorView setText:strFailText detailText:@"" imageName:[self errorImageName]];
     }
 }
-
-
 
 #pragma mark - UICollectionView delegate
 
@@ -407,7 +399,6 @@
         [self.refresh performSelectorOnMainThread:@selector(endRefreshing) withObject:nil waitUntilDone:NO];
     [UIView animateWithDuration:0.25 animations:^{
         [_collectionView setContentOffset:CGPointMake(0, 0) animated:NO];
-        
     }];
 }
 

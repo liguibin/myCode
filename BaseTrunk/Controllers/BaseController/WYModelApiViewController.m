@@ -161,7 +161,7 @@
     _loadMore = more;
     
     WYParamsBaseObject *params = [self paramsObject:_loadMore];
-    if (params) {
+    if (params && [params isKindOfClass:[WYParamsBaseObject class]]) {
         [[WYFileClient sharedInstance] request_send:params cachePolicy:cachePolicy delegate:self selector:@selector(requestDidFinishLoad:) selectorError:@selector(requestDidError:)];
     }
 }

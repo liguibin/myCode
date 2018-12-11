@@ -37,7 +37,8 @@
 
 - (void)initView
 {
-    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0., 5., RecommedGridAvatarWidth, RecommedGridAvatarWidth)];
+    self.backgroundColor = [UIColor redColor];
+    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0., 0., RecommedGridAvatarWidth, RecommedGridAvatarWidth)];
     [self addSubview:self.avatarView];
     
     self.vipView = [[UIImageView alloc] initWithFrame:CGRectMake(5., 3., 30., 15.)];
@@ -60,6 +61,7 @@
 - (void)setObject:(id)item
 {
     [self.avatarView sd_setImageWithURL:[WYConfig getImageUrl:[item objectForKey:@"coverUrl"]] placeholderImage:[UIImage imageNamed:iphoneX?@"xwaiting_page":@"waiting_page"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
+    [self.nameLabel setText:[item objectForKey:@"nickname"]];
 }
 
 @end

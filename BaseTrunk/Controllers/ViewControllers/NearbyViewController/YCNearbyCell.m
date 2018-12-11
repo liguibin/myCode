@@ -24,6 +24,7 @@
         self.nearbyView = [[YCNearbyView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 0)];
         [self.contentView addSubview:self.nearbyView];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
     }
     return self;
 }

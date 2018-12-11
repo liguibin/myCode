@@ -27,18 +27,7 @@
 //    }
     
     WYNavigationController *navigationController = [[WYNavigationController alloc] initWithRootViewController:viewController];
-    navigationController.navigationBar.barTintColor = [UIColor blackColor];
-    NSDictionary *navibarTextDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:17.], NSFontAttributeName,nil];
-    navigationController.navigationBar.titleTextAttributes = navibarTextDic;
-    
-    navigationController.tabBarItem.title = title;
-    if (navigationController.tabBarItem.title)
-    {
-        [navigationController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.85 alpha:1.], NSFontAttributeName:[UIFont systemFontOfSize:16.]} forState:UIControlStateNormal];
-        [navigationController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor], NSFontAttributeName:[UIFont boldSystemFontOfSize:16.]} forState:UIControlStateSelected];
-        [navigationController.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -14.)];
-    }
-    
+        
     return navigationController;
 }
 

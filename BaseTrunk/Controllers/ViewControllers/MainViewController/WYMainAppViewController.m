@@ -19,25 +19,26 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:YES];
-    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self setDelegate:self];
-    
     self.viewControllers = [NSArray arrayWithObjects:
                             [self viewControllerWithTabTitle:(@"首页") image:nil finishedSelectedImage:nil viewClass:@"YCHomeViewController"],
-                            [self viewControllerWithTabTitle:@"消息" image:nil finishedSelectedImage:nil viewClass:@"WYTableHomeViewController"],
+                            [self viewControllerWithTabTitle:@"消息" image:nil finishedSelectedImage:nil viewClass:@"ChatListViewController"],
                             [self viewControllerWithTabTitle:(@"我的") image:nil finishedSelectedImage:nil viewClass:@"WYSettingViewController"],
                             nil];
     
     //    [self addCenterButtonWithImage:[[UIImage imageNamed:@"tabbar_whisper"] imageWithColor:[UIColor appleRedColor]] highlightImage:nil callback:@selector(addCenterButtonTouchDown:)];
     
-    self.tabBar.tintColor = [UIColor appleRedColor];
-    self.tabBar.barTintColor = [UIColor blackColor];
+//    self.tabBar.tintColor = [UIColor redColor];
+    self.tabBar.translucent = NO;
+    self.tabBar.shadowImage = [UIImage new];
+    self.tabBar.backgroundImage = [UIImage new];
+    self.tabBar.barTintColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+
     [self setSelectedViewController:self.viewControllers[0]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applocatopnDidBecomeActiveNotification:) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -91,7 +92,6 @@
                 NSLog(@"发现新版本");
             }
             [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:[NSString stringWithFormat:@"Reminded_version_%@",update_version]];
-            
         }
     }
 }
@@ -103,6 +103,7 @@
 
 - (void)startLocation
 {
+    
 }
 
 #pragma mark -

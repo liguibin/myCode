@@ -10,6 +10,7 @@
 		3C16E7BB21BF78D70096C97C /* YCVideoListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C16E7BA21BF78D70096C97C /* YCVideoListObject.m */; };
 		3C5EC8BE21BD206100D4BA1A /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */; };
 		3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8C021BD232D00D4BA1A /* GlobalHelp.m */; };
+		3C5EC8EC21C0297F00D4BA1A /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8EB21C0297F00D4BA1A /* ChatListViewController.m */; };
 		3CB550C321BF5A2800E897FE /* YCNearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB550C021BF5A2700E897FE /* YCNearbyCell.m */; };
 		3CB550C421BF5A2800E897FE /* NearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB550C121BF5A2700E897FE /* NearbyViewController.m */; };
 		3CB550C521BF5A2800E897FE /* YCNearbyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB550C221BF5A2700E897FE /* YCNearbyView.m */; };
@@ -109,6 +110,8 @@
 		3C5EC8BD21BD206100D4BA1A /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		3C5EC8BF21BD232D00D4BA1A /* GlobalHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHelp.h; sourceTree = "<group>"; };
 		3C5EC8C021BD232D00D4BA1A /* GlobalHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalHelp.m; sourceTree = "<group>"; };
+		3C5EC8EA21C0297F00D4BA1A /* ChatListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
+		3C5EC8EB21C0297F00D4BA1A /* ChatListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
 		3CB550BB21BF5A0A00E897FE /* YCTableCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCTableCellProtocol.h; sourceTree = "<group>"; };
 		3CB550BD21BF5A2700E897FE /* YCNearbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCNearbyCell.h; sourceTree = "<group>"; };
 		3CB550BE21BF5A2700E897FE /* YCNearbyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCNearbyView.h; sourceTree = "<group>"; };
@@ -326,6 +329,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C5EC8E921C0296900D4BA1A /* ChatListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C5EC8EA21C0297F00D4BA1A /* ChatListViewController.h */,
+				3C5EC8EB21C0297F00D4BA1A /* ChatListViewController.m */,
+			);
+			path = ChatListViewController;
+			sourceTree = "<group>";
+		};
 		3CB550BC21BF5A2700E897FE /* NearbyViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +436,7 @@
 				EE7E76CA1B737FF900959AD8 /* HomeViewController */,
 				3CB550C621BF5A3100E897FE /* RecommedViewController */,
 				3CB550BC21BF5A2700E897FE /* NearbyViewController */,
+				3C5EC8E921C0296900D4BA1A /* ChatListViewController */,
 				EE7E76C91B737FF900959AD8 /* AboutViewController */,
 			);
 			path = ViewControllers;
@@ -886,6 +899,7 @@
 				EE7E77ED1B737FF900959AD8 /* SVWebViewController.m in Sources */,
 				EE7E78021B737FF900959AD8 /* UINavigationBar+Addition.m in Sources */,
 				EE7E77FD1B737FF900959AD8 /* NSString+Additions.m in Sources */,
+				3C5EC8EC21C0297F00D4BA1A /* ChatListViewController.m in Sources */,
 				EE7E77B41B737FF900959AD8 /* NSObject+Switch.m in Sources */,
 				EED8C2B21B9C1F31006C4AA6 /* SJAvatarBrowser.m in Sources */,
 				EE7E77F61B737FF900959AD8 /* SVWebViewControllerActivity.m in Sources */,
