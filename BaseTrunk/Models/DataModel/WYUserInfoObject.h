@@ -1,0 +1,32 @@
+//
+//  WYUserInfoDto.h
+//  BaseTrunk
+//
+//  Created by wangyong on 14-3-8.
+//  Copyright (c) 2014年 Whisper. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "WYItemParseBase.h"
+#import <MapKit/MapKit.h>
+
+@interface WYUserInfoObject : WYItemParseBase
+
+@property (nonatomic, copy) NSString *user_id;
+@property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *create_time;
+@property (nonatomic, copy) NSString *device_id;
+@property (nonatomic, copy) NSString *push_token;
+@property (nonatomic, copy) NSString *token;
+@property (nonatomic, copy) NSString *host;
+
+
+- (BOOL)parseUserInfo:(NSDictionary *)user_dict;
+
++ (instancetype)sharedInstance;
++ (void)saveUserInfo:(WYUserInfoObject *)loginUserInfo;
++ (void)cleanAccountDTO;
++ (void)activeLoginUserInfo;
++ (WYUserInfoObject *)loginUserInfo;
+- (NSString*)getToken;
+@end
