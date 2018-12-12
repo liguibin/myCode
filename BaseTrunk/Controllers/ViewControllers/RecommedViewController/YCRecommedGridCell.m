@@ -17,29 +17,6 @@
 
 @implementation YCRecommedGridCell
 
-//- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-//{
-//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-//    if (self) {
-//        self.recommedGridView = [[YCRecommedGridView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 0)];
-//        [self.contentView addSubview:self.recommedGridView];
-//        self.selectionStyle = UITableViewCellSelectionStyleNone;
-//    }
-//    return self;
-//}
-//
-//- (void)setObject:(id)item
-//{
-//    if (item && [item isKindOfClass:[NSDictionary class]]) {
-//        [self.recommedGridView setObject:item];
-//    }
-//}
-//
-//+ (CGFloat)rowHeightForObject:(id)item
-//{
-//    return [YCRecommedGridView rowHeightForObject:item];
-//}
-
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.recommedGridView = [[YCRecommedGridView alloc] initWithFrame:self.bounds];

@@ -14,10 +14,12 @@
     NSMutableDictionary *resultDictnary;
 }
 
-
 - (id)init:(NSString *)dict;
 - (BOOL)parseData:(NSDictionary *)result;
-
+- (NSMutableDictionary*)dtoResult;
+- (void)setDtoResult:(NSDictionary*)result;
+- (NSDictionary *)toDictionary;
++ (NSDictionary *)toDictionaryWithModle:(id)model;
 
 + (NSInteger)getIntValue:(NSNumber *)num;
 + (float)getFloatValue:(NSNumber *)num;
@@ -32,8 +34,8 @@
 - (double)getDoubleValue:(NSNumber *)num;
 - (long long )getLonglongValue:(NSNumber *)num;
 
-
 - (NSMutableDictionary*)dtoResult;
 - (void)setDtoResult:(NSDictionary*)result;
 - (NSDictionary *)toDictionary;
+
 @end

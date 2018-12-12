@@ -14,6 +14,10 @@
 
 @interface RecommendViewController ()
 
+{
+    NSInteger last;
+}
+
 @property (nonatomic, assign) ShowType showType;
 @property (nonatomic, strong) WYCollectionViewGridLayout *collectionlayout;
 
@@ -68,21 +72,28 @@
     return 0;
 }
 
+- (void)requestDidFinishLoad:(id)data
+{
+    [super requestDidFinishLoad:data];
+    if(data && [data isKindOfClass:[NSDictionary class]])
+    {
+        last = [[data objectForKey:@"last"] integerValue];
+//        if ([data containsObjectForKey:@"last"]) {
+//            last = [data intValueForKey:@"last" default:0];
+//        }
+    }
+}
+
 - (id)paramsObject:(BOOL)more
 {
     YCVideoListObject *videoListObejct = [YCVideoListObject new];
     videoListObejct.pageSize = 20;
     if (more) {
-//        videoListObejct.page = last + 1;
+        videoListObejct.page = last + 1;
     } else {
-//        [self setReset];
-//        if ([YCAppDelegate sharedAppDelegate].didFinishLaunching) {
-//            videoListObejct.page = 1; //启动app
-//            [YCAppDelegate sharedAppDelegate].didFinishLaunching = NO;
-//        } else {
-            videoListObejct.page = 0; //手动刷新
-//        }
+        videoListObejct.page = 0; //手动刷新
     }
+    
     return videoListObejct;
 }
 

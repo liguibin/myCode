@@ -204,4 +204,10 @@
     return dictionaryFormat;
 }
 
+//+ (NSDictionary *)toDictionaryWithModle:(id)model
+//{
+//    NSMutableDictionary *dictionaryFormat = [model modelToJSONObject];
+//    return dictionaryFormat;
+//}
+
 @end

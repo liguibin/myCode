@@ -8,6 +8,7 @@
 
 #import "YCRecommedGridView.h"
 #import "WYConfig.h"
+#import "YCVideoListObject.h"
 
 #define RecommedGridAvatarTop   5.
 #define RecommedGridAvatarWidth 105.
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) UILabel *photoCountLabel;
 @property (nonatomic, retain) UILabel *ageView;
 @property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) YCVideoListInfoObject *videoListInfoObject;
 
 @end
 
@@ -58,10 +60,14 @@
     [self addSubview:self.nameLabel];
 }
 
-- (void)setObject:(id)item
-{
-    [self.avatarView sd_setImageWithURL:[WYConfig getImageUrl:[item objectForKey:@"coverUrl"]] placeholderImage:[UIImage imageNamed:iphoneX?@"xwaiting_page":@"waiting_page"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
-    [self.nameLabel setText:[item objectForKey:@"nickname"]];
+- (void)setObject:(id)item {
+    if (!self.videoListInfoObject) {
+        self.videoListInfoObject = [YCVideoListInfoObject new];
+    }
+    if (item && [self.videoListInfoObject parseData:item]) {
+        [self.avatarView sd_setImageWithURL:[WYConfig getImageUrl:self.videoListInfoObject.coverUrl] placeholderImage:[UIImage imageNamed:iphoneX?@"xwaiting_page":@"waiting_page"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
+        [self.nameLabel setText:self.videoListInfoObject.nickname];
+    }
 }
 
 @end

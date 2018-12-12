@@ -7,6 +7,8 @@
 //
 
 #import "ChatListViewController.h"
+#import "YCVideoListObject.h"
+#import "ChatListCell.h"
 
 @interface ChatListViewController ()
 
@@ -16,12 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.tableView.backgroundColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
 }
 
 - (id)paramsObject:(BOOL)more
 {
-    return @"";
+    YCVideoListObject *videoListObejct = [YCVideoListObject new];
+    videoListObejct.page = 0;
+    return videoListObejct;
+}
+
+- (Class)cellClass
+{
+    return [ChatListCell class];
 }
 
 /*

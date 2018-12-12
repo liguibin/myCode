@@ -21,3 +21,7 @@
 }
 
 @end
+
+@implementation YCVideoListInfoObject
+
+@end

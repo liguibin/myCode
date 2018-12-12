@@ -7,6 +7,7 @@
 //
 
 #import "WYParamsBaseObject.h"
+#import "WYItemParseBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, assign) NSInteger pageSize;
 @property (nonatomic, assign) NSInteger pullType;
+
+@end
+
+@interface YCVideoListInfoObject : WYItemParseBase
+
+@property (nonatomic, copy) NSString *nickname;
+@property (nonatomic, copy) NSString *coverUrl;
 
 @end
 

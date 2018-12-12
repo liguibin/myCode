@@ -8,11 +8,14 @@
 
 @protocol YCTableCellProtocol <NSObject>
 
-+ (CGFloat)rowHeightForObject:(id)item;
 - (void)setObject:(id)item;
++ (CGFloat)rowHeightForObject:(id)item;
+
 @optional
+
 - (void)cellSelectedByIndexPath:(NSIndexPath *)index;
 - (void)cellPlayByIndexPath:(NSIndexPath *)index;
 - (UIView *)getCellView;
 - (void)setDelegate:(id)cellDelegate;
+
 @end

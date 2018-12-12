@@ -452,8 +452,14 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    id cell = [tableView cellForRowAtIndexPath:indexPath];
+    if([cell respondsToSelector:@selector(cellSelectedByIndexPath:)])
+    {
+        [cell performSelector:@selector(cellSelectedByIndexPath:) withObject:indexPath afterDelay:0];
+    }
 }
 
 #pragma mark -

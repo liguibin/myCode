@@ -28,7 +28,7 @@
     self.viewControllers = [NSArray arrayWithObjects:
                             [self viewControllerWithTabTitle:(@"首页") image:nil finishedSelectedImage:nil viewClass:@"YCHomeViewController"],
                             [self viewControllerWithTabTitle:@"消息" image:nil finishedSelectedImage:nil viewClass:@"ChatListViewController"],
-                            [self viewControllerWithTabTitle:(@"我的") image:nil finishedSelectedImage:nil viewClass:@"WYSettingViewController"],
+                            [self viewControllerWithTabTitle:(@"我的") image:nil finishedSelectedImage:nil viewClass:@"ProfileViewController"],
                             nil];
     
     //    [self addCenterButtonWithImage:[[UIImage imageNamed:@"tabbar_whisper"] imageWithColor:[UIColor appleRedColor]] highlightImage:nil callback:@selector(addCenterButtonTouchDown:)];

@@ -7,7 +7,7 @@
 //
 
 #import "WYSettingViewController.h"
-#import "WYUserInfoObject.h"x
+#import "WYUserInfoObject.h"
 #import "SVWebViewController.h"
 
 #define UISwitchWidth  50
@@ -21,19 +21,16 @@
     if (self) {
         // Custom initialization
         self.title = (@"设置");
-//        self.hidesBottomBarWhenPushed = YES;
-    
-        
+        self.hidesBottomBarWhenPushed = YES;
     }
     return self;
 }
 
-- (void) viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
     [self initTableView];
 }
-
 
 - (void)initTableView
 {
