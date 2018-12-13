@@ -28,6 +28,9 @@ PODS:
   - SecureUDID (1.1)
   - SVProgressHUD (2.2.5)
   - SVPullToRefresh (0.4.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
@@ -37,6 +40,7 @@ DEPENDENCIES:
   - SecureUDID (~> 1.1)
   - SVProgressHUD (~> 2.2.5)
   - SVPullToRefresh
+  - YYKit (~> 1.0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -47,6 +51,7 @@ SPEC REPOS:
     - SecureUDID
     - SVProgressHUD
     - SVPullToRefresh
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -56,7 +61,8 @@ SPEC CHECKSUMS:
   SecureUDID: 82a9df1f3baa7a0964600ac93a81273121775b17
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 87ea3949c75d9601bfa74063bca6d8be1c5ed5b6
+PODFILE CHECKSUM: 642a3ded5151a580235eb7e7774ddcc656dc5a6d
 
 COCOAPODS: 1.5.3

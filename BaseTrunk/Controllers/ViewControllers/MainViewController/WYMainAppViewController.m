@@ -37,7 +37,7 @@
     self.tabBar.translucent = NO;
     self.tabBar.shadowImage = [UIImage new];
     self.tabBar.backgroundImage = [UIImage new];
-    self.tabBar.barTintColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+    self.tabBar.barTintColor = [UIColor appBgColor];
 
     [self setSelectedViewController:self.viewControllers[0]];
     

@@ -28,12 +28,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+        [self createSubView];
     }
     return self;
 }
 
-- (void)initView
+- (void)createSubView
 {
     self.coverView = [[UIImageView alloc] initWithFrame:CGRectMake(0., 0., ScreenWidth, ScreenHeight)];
     [self addSubview:self.coverView];

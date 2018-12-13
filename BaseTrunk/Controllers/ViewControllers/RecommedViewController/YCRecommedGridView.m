@@ -11,8 +11,6 @@
 #import "YCVideoListObject.h"
 
 #define RecommedGridAvatarTop   5.
-#define RecommedGridAvatarWidth 105.
-#define RecommedGridAvatarHeight 130.
 
 @interface YCRecommedGridView ()
 
@@ -32,15 +30,15 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initView];
+        [self createSubView];
     }
     return self;
 }
 
-- (void)initView
+- (void)createSubView
 {
     self.backgroundColor = [UIColor redColor];
-    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0., 0., RecommedGridAvatarWidth, RecommedGridAvatarWidth)];
+    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(0., 0., self.width, self.width)];
     [self addSubview:self.avatarView];
     
     self.vipView = [[UIImageView alloc] initWithFrame:CGRectMake(5., 3., 30., 15.)];
@@ -52,7 +50,7 @@
     self.ageView = [[UILabel alloc] initWithFrame:CGRectMake(self.avatarView.left, self.avatarView.bottom + 8., 27., 14.)];
     [self addSubview:self.ageView];
     
-    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.ageView.right + 4., self.avatarView.bottom + 5., RecommedGridAvatarWidth - 30., 23.)];
+    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.ageView.right + 4., self.avatarView.bottom + 5., self.width - 30., 23.)];
     self.nameLabel.textColor = [UIColor colorWithWhite:1 alpha:0.5];
     self.nameLabel.font = [UIFont systemFontOfSize:13.];
     self.nameLabel.numberOfLines = 1;

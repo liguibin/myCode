@@ -9,7 +9,7 @@ target 'BaseTrunk' do
     pod 'SecureUDID', '~>1.1'
     pod 'SVProgressHUD', '~> 2.2.5'
     pod 'HMSegmentedControl', '~> 1.5.5'
-
+    pod 'YYKit', '~> 1.0.9'
 pod 'CocoaAsyncSocket', '~> 7.4.1'
 pod 'SVPullToRefresh'
 

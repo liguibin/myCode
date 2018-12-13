@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.collectionView.backgroundColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+    self.collectionView.backgroundColor = [UIColor appBgColor];
     self.collectionView.showsVerticalScrollIndicator = YES;
     self.collectionView.showsHorizontalScrollIndicator = NO;
     
@@ -59,7 +59,7 @@
         _collectionlayout.lineSpacing = 0;
     } else {
         _collectionlayout.numberOfItemsPerLine = 3;
-        _collectionlayout.aspectRatio = 105. / 131.;
+        _collectionlayout.aspectRatio = 105. / 130.;
         _collectionlayout.sectionInset = UIEdgeInsetsMake(5., 15., 0., 15.);
         _collectionlayout.interitemSpacing = 15;
         _collectionlayout.lineSpacing = 15;
@@ -77,10 +77,9 @@
     [super requestDidFinishLoad:data];
     if(data && [data isKindOfClass:[NSDictionary class]])
     {
-        last = [[data objectForKey:@"last"] integerValue];
-//        if ([data containsObjectForKey:@"last"]) {
-//            last = [data intValueForKey:@"last" default:0];
-//        }
+        if ([data containsObjectForKey:@"last"]) {
+            last = [data intValueForKey:@"last" default:0];
+        }
     }
 }
 

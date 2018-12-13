@@ -8,11 +8,13 @@
 
 #import "ProfileViewController.h"
 #import "WYSettingViewController.h"
+#import "ProfileHeaderView.h"
 
 @interface ProfileViewController ()
 
 @property (nonatomic, strong) UIImageView *bgView;
 @property (nonatomic, assign) CGRect originalFrame;
+@property (nonatomic, strong) ProfileHeaderView *tableHeaderView;
 
 @end
 
@@ -21,12 +23,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(clickRightBarButtonItem)];
+    [self addTableViewHeader];
+}
+
+- (void)addTableViewHeader
+{
+    [self.tableView setTableHeaderView:self.tableHeaderView];
+}
+
+- (ProfileHeaderView *)tableHeaderView
+{
+    if (_tableHeaderView) {
+        _tableHeaderView = [[ProfileHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, [ProfileHeaderView getHeaderHeight])];
+    }
     
-//    self.bgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 160)];
-//    self.bgView.image = [UIImage imageNamed:@"i_queshengtu_336"];
-//    self.originalFrame = self.bgView.frame;
-//    [self.view addSubview:self.bgView];
-//    self.tableView.tableHeaderView = self.bgView;
+    return _tableHeaderView;
 }
 
 - (void)clickRightBarButtonItem

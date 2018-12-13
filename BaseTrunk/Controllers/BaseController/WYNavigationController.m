@@ -26,7 +26,7 @@
 + (id)customNavigationController:(UINavigationController *)navigationController
 {
     navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    navigationController.navigationBar.barTintColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+    navigationController.navigationBar.barTintColor = [UIColor appBgColor];
 
     [navigationController.navigationBar setTranslucent:NO];
     [navigationController.navigationBar setShadowImage:[UIImage new]];

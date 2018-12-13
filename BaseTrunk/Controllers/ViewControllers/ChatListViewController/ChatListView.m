@@ -25,12 +25,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self createUI];
+        [self createSubView];
     }
     return self;
 }
 
-- (void)createUI
+- (void)createSubView
 {
     self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(15., 15., 60., 60.)];
     [self addSubview:self.avatarView];
@@ -55,6 +55,7 @@
 
 - (void)cellSelectedByIndexPath:(NSIndexPath *)index {
     ChatDetailViewController *chatDetailViewController = [[ChatDetailViewController alloc] initWithUserObject:self.videoListInfoObject];
+    chatDetailViewController.hidesBottomBarWhenPushed = YES;
     [self.viewController.navigationController pushViewController:chatDetailViewController animated:YES];
 }
 

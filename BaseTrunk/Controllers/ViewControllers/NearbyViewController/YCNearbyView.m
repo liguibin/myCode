@@ -30,12 +30,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self createUI];
+        [self createSubView];
     }
     return self;
 }
 
-- (void)createUI
+- (void)createSubView
 {
     self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(15., 15., 80., 80.)];
     [self addSubview:self.avatarView];

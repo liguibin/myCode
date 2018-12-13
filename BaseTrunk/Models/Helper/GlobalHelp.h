@@ -23,6 +23,8 @@
 #import "UIImageView+WebCache.h"
 #import "UIImage+Addition.h"
 #import "UIActionSheet+Addtions.h"
+#import "UIColor+Addition.h"
+#import "YYKit.h"
 
 /*
  *  System Versioning Preprocessor Macros

@@ -23,7 +23,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor colorFromHexString:@"#212121" withAlpha:1.];
+    self.tableView.backgroundColor = [UIColor appBgColor];
 }
 
 - (void)requestDidFinishLoad:(id)data
@@ -32,9 +32,9 @@
     if(data && [data isKindOfClass:[NSDictionary class]])
     {
         last = [[data objectForKey:@"last"] integerValue];
-//        if ([data containsObjectForKey:@"last"]) {
-//            last = [data intValueForKey:@"last" default:0];
-//        }
+        if ([data containsObjectForKey:@"last"]) {
+            last = [data intValueForKey:@"last" default:0];
+        }
     }
 }
 

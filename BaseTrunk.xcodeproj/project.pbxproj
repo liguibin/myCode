@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C16E7BB21BF78D70096C97C /* YCVideoListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C16E7BA21BF78D70096C97C /* YCVideoListObject.m */; };
+		3C38789521C266BC0017FFBA /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789421C266BC0017FFBA /* UIColor+Addition.m */; };
+		3C38789821C267850017FFBA /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789721C267850017FFBA /* ProfileHeaderView.m */; };
 		3C56ED5221C14E3C00D9159E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56ED5121C14E3C00D9159E /* ProfileViewController.m */; };
 		3C5EC8BE21BD206100D4BA1A /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */; };
 		3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8C021BD232D00D4BA1A /* GlobalHelp.m */; };
@@ -108,6 +110,10 @@
 		0A4849A8466AC31BCAF996F8 /* Pods-BaseTrunk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseTrunk.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseTrunk/Pods-BaseTrunk.release.xcconfig"; sourceTree = "<group>"; };
 		3C16E7B921BF78D70096C97C /* YCVideoListObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCVideoListObject.h; sourceTree = "<group>"; };
 		3C16E7BA21BF78D70096C97C /* YCVideoListObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YCVideoListObject.m; sourceTree = "<group>"; };
+		3C38789321C266BC0017FFBA /* UIColor+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		3C38789421C266BC0017FFBA /* UIColor+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		3C38789621C267850017FFBA /* ProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderView.h; sourceTree = "<group>"; };
+		3C38789721C267850017FFBA /* ProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderView.m; sourceTree = "<group>"; };
 		3C56ED5021C14E3C00D9159E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		3C56ED5121C14E3C00D9159E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
@@ -340,6 +346,8 @@
 			children = (
 				3C56ED5021C14E3C00D9159E /* ProfileViewController.h */,
 				3C56ED5121C14E3C00D9159E /* ProfileViewController.m */,
+				3C38789621C267850017FFBA /* ProfileHeaderView.h */,
+				3C38789721C267850017FFBA /* ProfileHeaderView.m */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -674,6 +682,8 @@
 				EE7E778C1B737FF900959AD8 /* UINavigationController+TRVSNavigationControllerTransition.m */,
 				EE7E778D1B737FF900959AD8 /* UIView+Addition.h */,
 				EE7E778E1B737FF900959AD8 /* UIView+Addition.m */,
+				3C38789321C266BC0017FFBA /* UIColor+Addition.h */,
+				3C38789421C266BC0017FFBA /* UIColor+Addition.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -956,6 +966,7 @@
 				EE7E77C21B737FF900959AD8 /* MMDiskCacheCenter.m in Sources */,
 				3CB550C321BF5A2800E897FE /* YCNearbyCell.m in Sources */,
 				3CB550C421BF5A2800E897FE /* NearbyViewController.m in Sources */,
+				3C38789521C266BC0017FFBA /* UIColor+Addition.m in Sources */,
 				EE7E786B1B75FCFE00959AD8 /* WYCrashFoundation.m in Sources */,
 				EE7E77FC1B737FF900959AD8 /* NSDate+Addition.m in Sources */,
 				EE7E780A1B737FF900959AD8 /* DateUtil.m in Sources */,
@@ -989,6 +1000,7 @@
 				EEDFE95B1B9F27860069D727 /* WYParamsBaseObject.m in Sources */,
 				3C5EC8EF21C1404600D4BA1A /* ChatListCell.m in Sources */,
 				EE7E77C81B737FF900959AD8 /* PWLoadMoreTableFooterView.m in Sources */,
+				3C38789821C267850017FFBA /* ProfileHeaderView.m in Sources */,
 				EE7E77CA1B737FF900959AD8 /* NSObject+SBJson.m in Sources */,
 				3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */,
 				EE7E78241B73903800959AD8 /* JMStaticContentTableViewCell.m in Sources */,
@@ -1122,7 +1134,7 @@
 		};
 		EE83F7171B5D174A007CBF95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A4849A8466AC31BCAF996F8 /* Pods-BaseTrunk.release.xcconfig */;
+			baseConfigurationReference = C535927E4C7D91333E6E120B /* Pods-BaseTrunk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
