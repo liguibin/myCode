@@ -10,6 +10,10 @@
 		3C16E7BB21BF78D70096C97C /* YCVideoListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C16E7BA21BF78D70096C97C /* YCVideoListObject.m */; };
 		3C38789521C266BC0017FFBA /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789421C266BC0017FFBA /* UIColor+Addition.m */; };
 		3C38789821C267850017FFBA /* ProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789721C267850017FFBA /* ProfileHeaderView.m */; };
+		3C3878A221C38AB80017FFBA /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789A21C38AB80017FFBA /* HZWaitingView.m */; };
+		3C3878A321C38AB80017FFBA /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789C21C38AB80017FFBA /* HZPhotoBrowser.m */; };
+		3C3878A421C38AB80017FFBA /* HZPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3C38789F21C38AB80017FFBA /* HZPhotoBrowser.bundle */; };
+		3C3878A521C38AB80017FFBA /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3878A021C38AB80017FFBA /* HZPhotoBrowserView.m */; };
 		3C56ED5221C14E3C00D9159E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56ED5121C14E3C00D9159E /* ProfileViewController.m */; };
 		3C5EC8BE21BD206100D4BA1A /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */; };
 		3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8C021BD232D00D4BA1A /* GlobalHelp.m */; };
@@ -114,6 +118,14 @@
 		3C38789421C266BC0017FFBA /* UIColor+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
 		3C38789621C267850017FFBA /* ProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderView.h; sourceTree = "<group>"; };
 		3C38789721C267850017FFBA /* ProfileHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderView.m; sourceTree = "<group>"; };
+		3C38789A21C38AB80017FFBA /* HZWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWaitingView.m; sourceTree = "<group>"; };
+		3C38789B21C38AB80017FFBA /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		3C38789C21C38AB80017FFBA /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
+		3C38789D21C38AB80017FFBA /* HZPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserView.h; sourceTree = "<group>"; };
+		3C38789E21C38AB80017FFBA /* HZWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWaitingView.h; sourceTree = "<group>"; };
+		3C38789F21C38AB80017FFBA /* HZPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HZPhotoBrowser.bundle; sourceTree = "<group>"; };
+		3C3878A021C38AB80017FFBA /* HZPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowserView.m; sourceTree = "<group>"; };
+		3C3878A121C38AB80017FFBA /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
 		3C56ED5021C14E3C00D9159E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		3C56ED5121C14E3C00D9159E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
@@ -341,6 +353,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C38789921C38AB80017FFBA /* HZPtotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				3C38789B21C38AB80017FFBA /* HZPhotoBrowserConfig.h */,
+				3C38789F21C38AB80017FFBA /* HZPhotoBrowser.bundle */,
+				3C38789E21C38AB80017FFBA /* HZWaitingView.h */,
+				3C38789A21C38AB80017FFBA /* HZWaitingView.m */,
+				3C38789D21C38AB80017FFBA /* HZPhotoBrowserView.h */,
+				3C3878A021C38AB80017FFBA /* HZPhotoBrowserView.m */,
+				3C3878A121C38AB80017FFBA /* HZPhotoBrowser.h */,
+				3C38789C21C38AB80017FFBA /* HZPhotoBrowser.m */,
+			);
+			path = HZPtotoBrowser;
+			sourceTree = "<group>";
+		};
 		3C56ED4F21C14E2000D9159E /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +554,7 @@
 		EE7E76E41B737FF900959AD8 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				3C38789921C38AB80017FFBA /* HZPtotoBrowser */,
 				EED8C2AF1B9C1F31006C4AA6 /* SJAvatarBrowser */,
 				EE7E76F91B737FF900959AD8 /* Colours */,
 				EE7E76FC1B737FF900959AD8 /* DiskCacheCenter */,
@@ -871,6 +899,7 @@
 				EE3E9F3F1B779BF5000B397A /* Localizable.strings in Resources */,
 				EE3E9F451B779D8C000B397A /* LaunchScreen.xib in Resources */,
 				EE7E77B51B737FF900959AD8 /* Images.xcassets in Resources */,
+				3C3878A421C38AB80017FFBA /* HZPhotoBrowser.bundle in Resources */,
 				EE7E77B61B737FF900959AD8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -954,8 +983,10 @@
 				EE7E77FB1B737FF900959AD8 /* NSArray+Addition.m in Sources */,
 				EE7E78461B75A34900959AD8 /* WYCollectionViewGridLayout.m in Sources */,
 				3CB550CC21BF5A3100E897FE /* YCRecommedGridCell.m in Sources */,
+				3C3878A321C38AB80017FFBA /* HZPhotoBrowser.m in Sources */,
 				EE7E78271B73903800959AD8 /* JMStaticTableViewCell.m in Sources */,
 				EE7E77D11B737FF900959AD8 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				3C3878A521C38AB80017FFBA /* HZPhotoBrowserView.m in Sources */,
 				EE7E78101B73896200959AD8 /* WYSocketObject.m in Sources */,
 				3CB550D521BF5EA100E897FE /* YCRecommedListCell.m in Sources */,
 				EEED17E21B9AC3B9007560F6 /* WYSettingViewController.m in Sources */,
@@ -1005,6 +1036,7 @@
 				3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */,
 				EE7E78241B73903800959AD8 /* JMStaticContentTableViewCell.m in Sources */,
 				EE7E77D51B737FF900959AD8 /* SBJsonWriter.m in Sources */,
+				3C3878A221C38AB80017FFBA /* HZWaitingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

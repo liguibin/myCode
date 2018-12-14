@@ -5,6 +5,8 @@ platform :ios, "8.0"
 target 'BaseTrunk' do
 
     pod 'SDWebImage', '~> 4.4.3'
+    pod 'FLAnimatedImage', '~> 1.0.12'
+    pod 'SDWebImage/GIF'
     pod 'AFNetworking', '~> 3.2.1'
     pod 'SecureUDID', '~>1.1'
     pod 'SVProgressHUD', '~> 2.2.5'

@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "WYSettingViewController.h"
 #import "ProfileHeaderView.h"
+#import "YCVideoListObject.h"
 
 @interface ProfileViewController ()
 
@@ -33,11 +34,21 @@
 
 - (ProfileHeaderView *)tableHeaderView
 {
-    if (_tableHeaderView) {
+    if (!_tableHeaderView) {
         _tableHeaderView = [[ProfileHeaderView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, [ProfileHeaderView getHeaderHeight])];
     }
     
     return _tableHeaderView;
+}
+
+- (void)requestDidFinishLoad:(NSData *)data
+{
+    if ([self arrangedObjects] && [self countOfArrangedObjects]) {
+        id headerDic = [[self arrangedObjects] firstObject];
+        if (headerDic && [headerDic isKindOfClass:[NSDictionary class]]) {
+            [self.tableHeaderView setObjectWithObejct:headerDic];
+        }
+    }
 }
 
 - (void)clickRightBarButtonItem
@@ -46,60 +57,17 @@
     [self.navigationController pushViewController:settingViewController animated:YES];
 }
 
-//- (UIImage *)imageWithColor:(UIColor *)color
-//{
-//    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetFillColorWithColor(context, [color CGColor]);
-//    CGContextFillRect(context, rect);
-//    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
-//    return theImage;
-//}
-//
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    CGFloat yOffset = scrollView.contentOffset.y;
-//    CGFloat offsetToShow = ScreenWidth * 280. / 375. - YCNavbar_Height;
-//    NSLog(@"%f", scrollView.contentOffset.y);
-//    if (scrollView.contentOffset.y > offsetToShow) {
-//        CGFloat alpha = (scrollView.contentOffset.y - offsetToShow) / (2*YCNavbar_Height);
-//        if (alpha >= 0 && alpha <= 1)
-//        {
-//            self.title = @"我";
-//            [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor colorFromHexString:@"#212121" withAlpha:alpha]] forBarMetrics:UIBarMetricsDefault];
-//            self.navigationController.navigationBar.tintColor = [UIColor colorWithWhite:0 alpha:alpha];
-//            [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithWhite:0 alpha:alpha]}];
-//        }
-//    } else {
-//        self.title = @"";
-//        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-//        [self.navigationController.navigationBar setBackgroundImage:[self imageWithColor:[UIColor colorFromHexString:@"#212121" withAlpha:0.]] forBarMetrics:UIBarMetricsDefault];
-//    }
-//
-//    // 往上滑动效果、处理放大效果
-//    if (yOffset > 0) {
-//        self.bgView.frame = ({
-//            CGRect frame = self.bgView.frame;
-////            frame.origin.y = self.originalFrame.origin.y - yOffset;
-//            frame.origin.y = 0;
-//            frame;
-//        });
-//    } else { // 往下移动，放大效果
-//        self.bgView.frame = ({
-//            CGRect frame = self.originalFrame;
-//            frame.size.height = self.originalFrame.size.height - yOffset;
-//            frame.size.width = frame.size.height/(ScreenWidth / 160.);
-//            frame.origin.x = self.originalFrame.origin.x - (frame.size.width - self.originalFrame.size.width)/2;
-//            frame;
-//        });
-//    }
-//}
 - (id)paramsObject:(BOOL)more
 {
-    return nil;
+    YCVideoListObject *videoListObejct = [YCVideoListObject new];
+    videoListObejct.pageSize = 20;
+    videoListObejct.page = 0;
+    return videoListObejct;
+}
+
+- (Class)cellClass
+{
+    return [UITableViewCell class];
 }
 
 /*

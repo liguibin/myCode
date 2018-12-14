@@ -8,10 +8,12 @@
 
 #import "ProfileHeaderView.h"
 #import "YCVideoListObject.h"
+#import <FLAnimatedImage/FLAnimatedImageView.h>
+#import "HZPhotoBrowser.h"
 
-@interface ProfileHeaderView ()
+@interface ProfileHeaderView () <HZPhotoBrowserDelegate>
 
-@property (nonatomic, retain) UIImageView *avatarView;
+@property (nonatomic, retain) FLAnimatedImageView *avatarView;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UILabel *descriptionLabel;
 @property (nonatomic, retain) YCVideoListInfoObject *videoListInfoObject;
@@ -31,10 +33,11 @@
 
 - (void)createSubView
 {
-    self.avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(40., (ScreenWidth - 40.) / 2., 80., 80.)];
+    self.avatarView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake((ScreenWidth - 80.) / 2., 40., 80., 80.)];
     self.avatarView.userInteractionEnabled = YES;
+    self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
     self.avatarView.clipsToBounds = YES;
-    self.avatarView.layer.cornerRadius = self.avatarView.width;
+    self.avatarView.layer.cornerRadius = self.avatarView.width / 2.;
     [self.avatarView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickAvatarView:)]];
     [self addSubview:self.avatarView];
     
@@ -52,7 +55,7 @@
         self.videoListInfoObject = [YCVideoListInfoObject new];
     }
     if (object && [self.videoListInfoObject parseData:object]) {
-        [self.avatarView sd_setImageWithURL:[WYConfig getImageUrl:self.videoListInfoObject.coverUrl] placeholderImage:[UIImage imageNamed:iphoneX?@"xwaiting_page":@"waiting_page"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
+        [self.avatarView sd_setImageWithURL:[WYConfig getImageUrl:self.videoListInfoObject.coverUrl] placeholderImage:[UIImage imageNamed:@"whiteplaceholder.png"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
         [self.nameLabel setText:self.videoListInfoObject.nickname];
         [self.nameLabel sizeToFit];
         self.nameLabel.centerX = ScreenWidth / 2.;
@@ -61,8 +64,32 @@
 
 - (void)clickAvatarView:(UIGestureRecognizer *)gesture
 {
-    
+    FLAnimatedImageView *imageView = (FLAnimatedImageView *)gesture.view;
+    //启动图片浏览器
+    HZPhotoBrowser *browser = [[HZPhotoBrowser alloc] init];
+    browser.isFullWidthForLandScape = YES;
+    browser.isNeedLandscape = YES;
+    browser.sourceImagesContainerView = self; // 原图的父控件
+    browser.currentImageIndex = (int)imageView.tag;
+    browser.imageCount = 1; // 图片总数
+    browser.delegate = self;
+    [browser show];
 }
+
+#pragma mark - photobrowser代理方法
+// 返回临时占位图片（即原来的小图）
+- (UIImage *)photoBrowser:(HZPhotoBrowser *)browser placeholderImageForIndex:(NSInteger)index
+{
+    FLAnimatedImageView *imageView = (FLAnimatedImageView *)self.subviews[index];
+    return imageView.image;
+}
+
+// 返回高质量图片的url
+//- (NSURL *)photoBrowser:(HZPhotoBrowser *)browser highQualityImageURLForIndex:(NSInteger)index
+//{
+//    NSString *urlStr = [self.urlArray[index] stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
+//    return [NSURL URLWithString:urlStr];
+//}
 
 + (CGFloat)getHeaderHeight
 {

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02B5193A011244A618DEBF685369B0A9"
+               BlueprintIdentifier = "D33F642264932D2A265138FEB94B5C41"
                BlueprintName = "SecureUDID"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libSecureUDID.a">

@@ -24,7 +24,7 @@
         self.chatListView = [[ChatListView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, [[self class] rowHeightForObject:nil])];
         [self.contentView addSubview:self.chatListView];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = v;
+        self.backgroundColor = [UIColor appBgColor];
     }
     return self;
 }

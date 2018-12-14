@@ -430,12 +430,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     Class cls = [self cellClass];
+    if (cls == NULL || cls == nil) {
+        return [UITableViewCell class];
+    }
     NSString *identifier = (indexPath.row/2==0)?@"Cell":@"CELL";
     id cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[cls alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    
     
     [self setDisplayCell:cell cellForRowAtIndexPath:indexPath];
     return cell;
