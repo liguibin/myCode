@@ -10,4 +10,4 @@
 #endif
 
 #import "GlobalHelp.h"
-#import "WYAppDelegate.h"
+#import "MZAppDelegate.h"

@@ -32,6 +32,7 @@ PODS:
   - SecureUDID (1.1)
   - SVProgressHUD (2.2.5)
   - SVPullToRefresh (0.4.1)
+  - TZImagePickerController (3.1.5)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - SecureUDID (~> 1.1)
   - SVProgressHUD (~> 2.2.5)
   - SVPullToRefresh
+  - TZImagePickerController (~> 3.1.5)
   - YYKit (~> 1.0.9)
 
 SPEC REPOS:
@@ -58,6 +60,7 @@ SPEC REPOS:
     - SecureUDID
     - SVProgressHUD
     - SVPullToRefresh
+    - TZImagePickerController
     - YYKit
 
 SPEC CHECKSUMS:
@@ -69,8 +72,9 @@ SPEC CHECKSUMS:
   SecureUDID: 82a9df1f3baa7a0964600ac93a81273121775b17
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  TZImagePickerController: 6cc6e9c1a73bb8e62cfef98fd40af2d90634dcf5
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 0a4947faca97b210ebde397a8dbbe06fc2e839bf
+PODFILE CHECKSUM: 1acd391938abb607340be55e9c073f19b8e07f9d
 
 COCOAPODS: 1.5.3

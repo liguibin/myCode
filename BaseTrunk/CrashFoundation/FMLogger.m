@@ -25,7 +25,7 @@
 
 
 #import "FMLogger.h"
-#import "WYFileClient.h"
+#import "MZFileClient.h"
 
 
 // Writes to the log file and messages sent to the console are done in the background so that the main thread isn't blocked by logging

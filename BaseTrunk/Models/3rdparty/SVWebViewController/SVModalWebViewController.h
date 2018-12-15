@@ -10,7 +10,7 @@
 
 @class SVWebViewController;
 
-@interface SVModalWebViewController : WYNavigationController
+@interface SVModalWebViewController : MZNavigationController
 
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL *)URL;

@@ -14,7 +14,7 @@
 #import "NSDate+Addition.h"
 #import "UIImage+Addition.h"
 #import "Colours.h"
-#import "WYNavigationController.h"
+#import "MZNavigationController.h"
 #import "SVProgressHUD.h"
 #import "DateUtil.h"
 #import "UINavigationBar+Addition.h"

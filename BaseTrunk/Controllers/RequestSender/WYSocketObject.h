@@ -7,7 +7,7 @@
 //  Copyright (c) 2015年 wang yong. All rights reserved.
 //
 
-#import "WYItemParseBase.h"
+#import "MZItemParseBase.h"
 #import "GCDAsyncSocket.h"
 
 typedef NS_ENUM(NSInteger, SOCKET_TAG)

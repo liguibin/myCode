@@ -7,7 +7,7 @@
 //
 
 #import "WYSocketObject.h"
-#import "WYUserInfoObject.h"
+#import "MZUserInfoObject.h"
 #import "SBJson.h"
 
 @interface GCDAsyncSocketPreBuffer : NSObject
@@ -74,7 +74,7 @@ static WYSocketObject* _sharedInstance = nil;
     //[socket setAutoDisconnectOnClosedReadStream:NO];
     
     
-    host = [WYUserInfoObject sharedInstance].host;
+    host = [MZUserInfoObject sharedInstance].host;
     port = 9904;
     
     NSError *err = nil;
@@ -88,7 +88,7 @@ static WYSocketObject* _sharedInstance = nil;
 - (void)auth_rq
 {
     
-    NSString *auth_rq_string = [NSString stringWithFormat:@"{\"id\":\"%@\",\"type\":\"auth_rq\",\"token\":\"%@\"}\n",[WYUserInfoObject sharedInstance].user_id,[WYUserInfoObject sharedInstance].token];
+    NSString *auth_rq_string = [NSString stringWithFormat:@"{\"id\":\"%@\",\"type\":\"auth_rq\",\"token\":\"%@\"}\n",[MZUserInfoObject sharedInstance].user_id,[MZUserInfoObject sharedInstance].token];
     if(auth_rq_string)
     {
         NSData *data = [auth_rq_string dataUsingEncoding:NSUTF8StringEncoding];
@@ -221,9 +221,9 @@ static WYSocketObject* _sharedInstance = nil;
             id obj = [httpResponse JSONValue];
             if(obj && [obj isKindOfClass:[NSDictionary class]])
             {
-                id resID = [WYItemParseBase getStrValue:[obj objectForKey:@"id"]];//1408161430060
+                id resID = [MZItemParseBase getStrValue:[obj objectForKey:@"id"]];//1408161430060
                 //NSLog(@"socket_id:           %@",resID);
-                id resType = [WYItemParseBase getStrValue:[obj objectForKey:@"type"]];
+                id resType = [MZItemParseBase getStrValue:[obj objectForKey:@"type"]];
                 
                 if([resType isEqualToString:@"error"])
                 {
