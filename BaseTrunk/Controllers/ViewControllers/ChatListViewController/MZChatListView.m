@@ -8,9 +8,8 @@
 
 #import "MZChatListView.h"
 #import "MZConfig.h"
-#import "MZChatDetailViewController.h"
+#import "MZMessageViewController.h"
 #import "MZVideoListObject.h"
-#import "DemoMessagesViewController.h"
 
 @interface MZChatListView ()
 
@@ -55,14 +54,9 @@
 }
 
 - (void)cellSelectedByIndexPath:(NSIndexPath *)index {
-    DemoMessagesViewController *messagesViewController = [DemoMessagesViewController messagesViewController];
-    messagesViewController.hidesBottomBarWhenPushed = YES;
-    [self.viewController.navigationController pushViewController:messagesViewController animated:YES];
-    return;
-    
-    MZChatDetailViewController *chatDetailViewController = [[MZChatDetailViewController alloc] initWithUserObject:self.videoListInfoObject];
-    chatDetailViewController.hidesBottomBarWhenPushed = YES;
-    [self.viewController.navigationController pushViewController:chatDetailViewController animated:YES];
+    MZMessageViewController *messageViewController = [[MZMessageViewController alloc] initWithUserObject:self.videoListInfoObject];
+    messageViewController.hidesBottomBarWhenPushed = YES;
+    [self.viewController.navigationController pushViewController:messageViewController animated:YES];
 }
 
 + (CGFloat)rowHeightForObject:(id)item {

@@ -90,10 +90,10 @@
 #define iPhone6_down  (([UIScreen mainScreen].bounds.size.height <= 667)?YES: NO)
 
 #define iphoneX (((ScreenWidth == 375.0f && ScreenHeight == 812.0f) || (ScreenWidth == 414.0f && ScreenHeight == 896.0f))? YES : NO)
-#define YCNavbar_Height (iphoneX ? 88.0f : 64.0f)
-#define YCNavbar_DiffH  (iphoneX ? 24.0f : 0.0f)
-#define YCTabbar_Height (iphoneX ? 83.0f : 49.0f)
-#define YCTabBar_DiffH  (iphoneX ? 34.0f : 0.0f)
+#define Navbar_Height (iphoneX ? 88.0f : 64.0f)
+#define Navbar_DiffH  (iphoneX ? 24.0f : 0.0f)
+#define Tabbar_Height (iphoneX ? 83.0f : 49.0f)
+#define TabBar_DiffH  (iphoneX ? 34.0f : 0.0f)
 
 
 //获得屏幕的宽高

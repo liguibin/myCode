@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		3C16E7BB21BF78D70096C97C /* MZVideoListObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C16E7BA21BF78D70096C97C /* MZVideoListObject.m */; };
 		3C21841921C4F23200A8ED5F /* MZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21841721C4F23200A8ED5F /* MZNavigationController.m */; };
+		3C21845021C8ECA200A8ED5F /* systemEmoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C21842821C8ECA200A8ED5F /* systemEmoji.plist */; };
+		3C21845121C8ECA300A8ED5F /* emotion.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C21842921C8ECA200A8ED5F /* emotion.plist */; };
+		3C21845221C8ECA300A8ED5F /* face.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C21842A21C8ECA200A8ED5F /* face.plist */; };
+		3C21845321C8ECA300A8ED5F /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21842D21C8ECA200A8ED5F /* NSString+Emoji.m */; };
+		3C21845421C8ECA300A8ED5F /* MoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21843321C8ECA200A8ED5F /* MoreItem.m */; };
+		3C21845521C8ECA300A8ED5F /* ChatToolBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21843421C8ECA200A8ED5F /* ChatToolBarItem.m */; };
+		3C21845621C8ECA300A8ED5F /* FaceThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21843521C8ECA200A8ED5F /* FaceThemeModel.m */; };
+		3C21845721C8ECA300A8ED5F /* FacePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21843B21C8ECA200A8ED5F /* FacePanel.m */; };
+		3C21845821C8ECA300A8ED5F /* PanelBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21843D21C8ECA200A8ED5F /* PanelBottomView.m */; };
+		3C21845921C8ECA300A8ED5F /* FaceThemeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21843E21C8ECA200A8ED5F /* FaceThemeView.m */; };
+		3C21845A21C8ECA300A8ED5F /* FacePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844021C8ECA200A8ED5F /* FacePageView.m */; };
+		3C21845B21C8ECA300A8ED5F /* FaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844221C8ECA200A8ED5F /* FaceButton.m */; };
+		3C21845C21C8ECA300A8ED5F /* RFRecordButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844521C8ECA200A8ED5F /* RFRecordButton.m */; };
+		3C21845D21C8ECA300A8ED5F /* ChatToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844721C8ECA200A8ED5F /* ChatToolBar.m */; };
+		3C21845E21C8ECA300A8ED5F /* RFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844821C8ECA200A8ED5F /* RFTextView.m */; };
+		3C21845F21C8ECA300A8ED5F /* OfficialAccountToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844921C8ECA200A8ED5F /* OfficialAccountToolbar.m */; };
+		3C21846021C8ECA300A8ED5F /* MorePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844D21C8ECA200A8ED5F /* MorePanel.m */; };
+		3C21846121C8ECA300A8ED5F /* ChatKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844F21C8ECA200A8ED5F /* ChatKeyBoard.m */; };
+		3C21846821C8ED7300A8ED5F /* MZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21846721C8ED7300A8ED5F /* MZMessageViewController.m */; };
 		3C38789521C266BC0017FFBA /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789421C266BC0017FFBA /* UIColor+Addition.m */; };
 		3C38789821C267850017FFBA /* MZProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789721C267850017FFBA /* MZProfileHeaderView.m */; };
 		3C3878A221C38AB80017FFBA /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789A21C38AB80017FFBA /* HZWaitingView.m */; };
@@ -61,16 +80,11 @@
 		3C56EDE121C68A9B00D9159E /* NSBundle+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDB121C68A9B00D9159E /* NSBundle+JSQMessages.m */; };
 		3C56EDE221C68A9B00D9159E /* NSString+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDB221C68A9B00D9159E /* NSString+JSQMessages.m */; };
 		3C56EDE321C68A9B00D9159E /* UIView+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDB521C68A9B00D9159E /* UIView+JSQMessages.m */; };
-		3C56EDE921C68F5D00D9159E /* DemoMessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDE721C68F5D00D9159E /* DemoMessagesViewController.m */; };
-		3C56EDEA21C68F5D00D9159E /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDE821C68F5D00D9159E /* DemoModelData.m */; };
-		3C56EDEF21C68FC000D9159E /* DemoSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDEB21C68FBF00D9159E /* DemoSettingsViewController.m */; };
-		3C56EDF021C68FC000D9159E /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDEE21C68FBF00D9159E /* NSUserDefaults+DemoSettings.m */; };
 		3C5EC8BE21BD206100D4BA1A /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */; };
 		3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8C021BD232D00D4BA1A /* GlobalHelp.m */; };
 		3C5EC8EC21C0297F00D4BA1A /* MZChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8EB21C0297F00D4BA1A /* MZChatListViewController.m */; };
 		3C5EC8EF21C1404600D4BA1A /* MZChatListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8EE21C1404600D4BA1A /* MZChatListCell.m */; };
 		3C5EC8F221C1405600D4BA1A /* MZChatListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8F121C1405600D4BA1A /* MZChatListView.m */; };
-		3C5EC8F621C141A600D4BA1A /* MZChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8F521C141A600D4BA1A /* MZChatDetailViewController.m */; };
 		3CB550C321BF5A2800E897FE /* MZNearbyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB550C021BF5A2700E897FE /* MZNearbyCell.m */; };
 		3CB550C421BF5A2800E897FE /* MZNearbyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB550C121BF5A2700E897FE /* MZNearbyViewController.m */; };
 		3CB550C521BF5A2800E897FE /* MZNearbyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB550C221BF5A2700E897FE /* MZNearbyView.m */; };
@@ -167,6 +181,42 @@
 		3C21841B21C4F73000A8ED5F /* MZTableCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTableCellDelegate.h; sourceTree = "<group>"; };
 		3C21841C21C4F81300A8ED5F /* MZItemParseBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZItemParseBase.h; sourceTree = "<group>"; };
 		3C21841D21C4F98E00A8ED5F /* MZChatListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZChatListCell.h; sourceTree = "<group>"; };
+		3C21842821C8ECA200A8ED5F /* systemEmoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = systemEmoji.plist; sourceTree = "<group>"; };
+		3C21842921C8ECA200A8ED5F /* emotion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotion.plist; sourceTree = "<group>"; };
+		3C21842A21C8ECA200A8ED5F /* face.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = face.plist; sourceTree = "<group>"; };
+		3C21842B21C8ECA200A8ED5F /* ChatKeyBoardMacroDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKeyBoardMacroDefine.h; sourceTree = "<group>"; };
+		3C21842D21C8ECA200A8ED5F /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		3C21842E21C8ECA200A8ED5F /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		3C21843021C8ECA200A8ED5F /* ChatToolBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatToolBarItem.h; sourceTree = "<group>"; };
+		3C21843121C8ECA200A8ED5F /* MoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreItem.h; sourceTree = "<group>"; };
+		3C21843221C8ECA200A8ED5F /* FaceThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceThemeModel.h; sourceTree = "<group>"; };
+		3C21843321C8ECA200A8ED5F /* MoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreItem.m; sourceTree = "<group>"; };
+		3C21843421C8ECA200A8ED5F /* ChatToolBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatToolBarItem.m; sourceTree = "<group>"; };
+		3C21843521C8ECA200A8ED5F /* FaceThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceThemeModel.m; sourceTree = "<group>"; };
+		3C21843621C8ECA200A8ED5F /* ChatKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKeyBoard.h; sourceTree = "<group>"; };
+		3C21843921C8ECA200A8ED5F /* FaceThemeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceThemeView.h; sourceTree = "<group>"; };
+		3C21843A21C8ECA200A8ED5F /* FacePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePageView.h; sourceTree = "<group>"; };
+		3C21843B21C8ECA200A8ED5F /* FacePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePanel.m; sourceTree = "<group>"; };
+		3C21843C21C8ECA200A8ED5F /* FaceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceButton.h; sourceTree = "<group>"; };
+		3C21843D21C8ECA200A8ED5F /* PanelBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelBottomView.m; sourceTree = "<group>"; };
+		3C21843E21C8ECA200A8ED5F /* FaceThemeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceThemeView.m; sourceTree = "<group>"; };
+		3C21843F21C8ECA200A8ED5F /* FacePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePanel.h; sourceTree = "<group>"; };
+		3C21844021C8ECA200A8ED5F /* FacePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePageView.m; sourceTree = "<group>"; };
+		3C21844121C8ECA200A8ED5F /* PanelBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelBottomView.h; sourceTree = "<group>"; };
+		3C21844221C8ECA200A8ED5F /* FaceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceButton.m; sourceTree = "<group>"; };
+		3C21844421C8ECA200A8ED5F /* RFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFTextView.h; sourceTree = "<group>"; };
+		3C21844521C8ECA200A8ED5F /* RFRecordButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFRecordButton.m; sourceTree = "<group>"; };
+		3C21844621C8ECA200A8ED5F /* OfficialAccountToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfficialAccountToolbar.h; sourceTree = "<group>"; };
+		3C21844721C8ECA200A8ED5F /* ChatToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatToolBar.m; sourceTree = "<group>"; };
+		3C21844821C8ECA200A8ED5F /* RFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFTextView.m; sourceTree = "<group>"; };
+		3C21844921C8ECA200A8ED5F /* OfficialAccountToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfficialAccountToolbar.m; sourceTree = "<group>"; };
+		3C21844A21C8ECA200A8ED5F /* RFRecordButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFRecordButton.h; sourceTree = "<group>"; };
+		3C21844B21C8ECA200A8ED5F /* ChatToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatToolBar.h; sourceTree = "<group>"; };
+		3C21844D21C8ECA200A8ED5F /* MorePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePanel.m; sourceTree = "<group>"; };
+		3C21844E21C8ECA200A8ED5F /* MorePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePanel.h; sourceTree = "<group>"; };
+		3C21844F21C8ECA200A8ED5F /* ChatKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyBoard.m; sourceTree = "<group>"; };
+		3C21846621C8ED7300A8ED5F /* MZMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZMessageViewController.h; sourceTree = "<group>"; };
+		3C21846721C8ED7300A8ED5F /* MZMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZMessageViewController.m; sourceTree = "<group>"; };
 		3C38789321C266BC0017FFBA /* UIColor+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		3C38789421C266BC0017FFBA /* UIColor+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
 		3C38789621C267850017FFBA /* MZProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZProfileHeaderView.h; sourceTree = "<group>"; };
@@ -273,14 +323,6 @@
 		3C56EDB421C68A9B00D9159E /* UIImage+JSQMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JSQMessages.h"; sourceTree = "<group>"; };
 		3C56EDB521C68A9B00D9159E /* UIView+JSQMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JSQMessages.m"; sourceTree = "<group>"; };
 		3C56EDB621C68A9B00D9159E /* NSBundle+JSQMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JSQMessages.h"; sourceTree = "<group>"; };
-		3C56EDE521C68F5D00D9159E /* DemoMessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoMessagesViewController.h; sourceTree = "<group>"; };
-		3C56EDE621C68F5D00D9159E /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
-		3C56EDE721C68F5D00D9159E /* DemoMessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoMessagesViewController.m; sourceTree = "<group>"; };
-		3C56EDE821C68F5D00D9159E /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
-		3C56EDEB21C68FBF00D9159E /* DemoSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoSettingsViewController.m; sourceTree = "<group>"; };
-		3C56EDEC21C68FBF00D9159E /* NSUserDefaults+DemoSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+DemoSettings.h"; sourceTree = "<group>"; };
-		3C56EDED21C68FBF00D9159E /* DemoSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoSettingsViewController.h; sourceTree = "<group>"; };
-		3C56EDEE21C68FBF00D9159E /* NSUserDefaults+DemoSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+DemoSettings.m"; sourceTree = "<group>"; };
 		3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		3C5EC8BD21BD206100D4BA1A /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		3C5EC8BF21BD232D00D4BA1A /* GlobalHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHelp.h; sourceTree = "<group>"; };
@@ -290,8 +332,6 @@
 		3C5EC8EE21C1404600D4BA1A /* MZChatListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZChatListCell.m; sourceTree = "<group>"; };
 		3C5EC8F021C1405600D4BA1A /* MZChatListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZChatListView.h; sourceTree = "<group>"; };
 		3C5EC8F121C1405600D4BA1A /* MZChatListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZChatListView.m; sourceTree = "<group>"; };
-		3C5EC8F421C141A600D4BA1A /* MZChatDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZChatDetailViewController.h; sourceTree = "<group>"; };
-		3C5EC8F521C141A600D4BA1A /* MZChatDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZChatDetailViewController.m; sourceTree = "<group>"; };
 		3CB550BB21BF5A0A00E897FE /* MZTableCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZTableCellProtocol.h; sourceTree = "<group>"; };
 		3CB550BD21BF5A2700E897FE /* MZNearbyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZNearbyCell.h; sourceTree = "<group>"; };
 		3CB550BE21BF5A2700E897FE /* MZNearbyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZNearbyView.h; sourceTree = "<group>"; };
@@ -514,6 +554,112 @@
 			path = BaseTabbarViewController;
 			sourceTree = "<group>";
 		};
+		3C21842621C8ECA200A8ED5F /* KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3C21842721C8ECA200A8ED5F /* plist */,
+				3C21842B21C8ECA200A8ED5F /* ChatKeyBoardMacroDefine.h */,
+				3C21842C21C8ECA200A8ED5F /* Cagegory */,
+				3C21842F21C8ECA200A8ED5F /* Models */,
+				3C21843721C8ECA200A8ED5F /* Views */,
+				3C21843621C8ECA200A8ED5F /* ChatKeyBoard.h */,
+				3C21844F21C8ECA200A8ED5F /* ChatKeyBoard.m */,
+			);
+			path = KeyBoard;
+			sourceTree = "<group>";
+		};
+		3C21842721C8ECA200A8ED5F /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				3C21842821C8ECA200A8ED5F /* systemEmoji.plist */,
+				3C21842921C8ECA200A8ED5F /* emotion.plist */,
+				3C21842A21C8ECA200A8ED5F /* face.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		3C21842C21C8ECA200A8ED5F /* Cagegory */ = {
+			isa = PBXGroup;
+			children = (
+				3C21842D21C8ECA200A8ED5F /* NSString+Emoji.m */,
+				3C21842E21C8ECA200A8ED5F /* NSString+Emoji.h */,
+			);
+			path = Cagegory;
+			sourceTree = "<group>";
+		};
+		3C21842F21C8ECA200A8ED5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C21843021C8ECA200A8ED5F /* ChatToolBarItem.h */,
+				3C21843121C8ECA200A8ED5F /* MoreItem.h */,
+				3C21843221C8ECA200A8ED5F /* FaceThemeModel.h */,
+				3C21843321C8ECA200A8ED5F /* MoreItem.m */,
+				3C21843421C8ECA200A8ED5F /* ChatToolBarItem.m */,
+				3C21843521C8ECA200A8ED5F /* FaceThemeModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3C21843721C8ECA200A8ED5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C21843821C8ECA200A8ED5F /* FacePanel */,
+				3C21844321C8ECA200A8ED5F /* ToolBarPanel */,
+				3C21844C21C8ECA200A8ED5F /* MorePanel */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3C21843821C8ECA200A8ED5F /* FacePanel */ = {
+			isa = PBXGroup;
+			children = (
+				3C21843921C8ECA200A8ED5F /* FaceThemeView.h */,
+				3C21843A21C8ECA200A8ED5F /* FacePageView.h */,
+				3C21843B21C8ECA200A8ED5F /* FacePanel.m */,
+				3C21843C21C8ECA200A8ED5F /* FaceButton.h */,
+				3C21843D21C8ECA200A8ED5F /* PanelBottomView.m */,
+				3C21843E21C8ECA200A8ED5F /* FaceThemeView.m */,
+				3C21843F21C8ECA200A8ED5F /* FacePanel.h */,
+				3C21844021C8ECA200A8ED5F /* FacePageView.m */,
+				3C21844121C8ECA200A8ED5F /* PanelBottomView.h */,
+				3C21844221C8ECA200A8ED5F /* FaceButton.m */,
+			);
+			path = FacePanel;
+			sourceTree = "<group>";
+		};
+		3C21844321C8ECA200A8ED5F /* ToolBarPanel */ = {
+			isa = PBXGroup;
+			children = (
+				3C21844421C8ECA200A8ED5F /* RFTextView.h */,
+				3C21844521C8ECA200A8ED5F /* RFRecordButton.m */,
+				3C21844621C8ECA200A8ED5F /* OfficialAccountToolbar.h */,
+				3C21844721C8ECA200A8ED5F /* ChatToolBar.m */,
+				3C21844821C8ECA200A8ED5F /* RFTextView.m */,
+				3C21844921C8ECA200A8ED5F /* OfficialAccountToolbar.m */,
+				3C21844A21C8ECA200A8ED5F /* RFRecordButton.h */,
+				3C21844B21C8ECA200A8ED5F /* ChatToolBar.h */,
+			);
+			path = ToolBarPanel;
+			sourceTree = "<group>";
+		};
+		3C21844C21C8ECA200A8ED5F /* MorePanel */ = {
+			isa = PBXGroup;
+			children = (
+				3C21844D21C8ECA200A8ED5F /* MorePanel.m */,
+				3C21844E21C8ECA200A8ED5F /* MorePanel.h */,
+			);
+			path = MorePanel;
+			sourceTree = "<group>";
+		};
+		3C21846221C8ECE800A8ED5F /* MessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3C21846621C8ED7300A8ED5F /* MZMessageViewController.h */,
+				3C21846721C8ED7300A8ED5F /* MZMessageViewController.m */,
+			);
+			path = MessageViewController;
+			sourceTree = "<group>";
+		};
 		3C38789921C38AB80017FFBA /* HZPtotoBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,21 +841,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		3C56EDE421C68F5D00D9159E /* MessageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3C56EDED21C68FBF00D9159E /* DemoSettingsViewController.h */,
-				3C56EDEB21C68FBF00D9159E /* DemoSettingsViewController.m */,
-				3C56EDEC21C68FBF00D9159E /* NSUserDefaults+DemoSettings.h */,
-				3C56EDEE21C68FBF00D9159E /* NSUserDefaults+DemoSettings.m */,
-				3C56EDE521C68F5D00D9159E /* DemoMessagesViewController.h */,
-				3C56EDE721C68F5D00D9159E /* DemoMessagesViewController.m */,
-				3C56EDE621C68F5D00D9159E /* DemoModelData.h */,
-				3C56EDE821C68F5D00D9159E /* DemoModelData.m */,
-			);
-			path = MessageViewController;
-			sourceTree = "<group>";
-		};
 		3C5EC8E921C0296900D4BA1A /* ChatListViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,15 +852,6 @@
 				3C5EC8F121C1405600D4BA1A /* MZChatListView.m */,
 			);
 			path = ChatListViewController;
-			sourceTree = "<group>";
-		};
-		3C5EC8F321C1416D00D4BA1A /* ChatDetailViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3C5EC8F421C141A600D4BA1A /* MZChatDetailViewController.h */,
-				3C5EC8F521C141A600D4BA1A /* MZChatDetailViewController.m */,
-			);
-			path = ChatDetailViewController;
 			sourceTree = "<group>";
 		};
 		3CB550BC21BF5A2700E897FE /* NearbyViewController */ = {
@@ -831,8 +953,7 @@
 				3CB550C621BF5A3100E897FE /* RecommedViewController */,
 				3CB550BC21BF5A2700E897FE /* NearbyViewController */,
 				3C5EC8E921C0296900D4BA1A /* ChatListViewController */,
-				3C56EDE421C68F5D00D9159E /* MessageViewController */,
-				3C5EC8F321C1416D00D4BA1A /* ChatDetailViewController */,
+				3C21846221C8ECE800A8ED5F /* MessageViewController */,
 				3C56ED4F21C14E2000D9159E /* ProfileViewController */,
 				EE7E76C91B737FF900959AD8 /* AboutViewController */,
 			);
@@ -886,6 +1007,7 @@
 		EE7E76E41B737FF900959AD8 /* 3rdparty */ = {
 			isa = PBXGroup;
 			children = (
+				3C21842621C8ECA200A8ED5F /* KeyBoard */,
 				3C56ED5321C68A9B00D9159E /* JSQMessagesViewController */,
 				3C38789921C38AB80017FFBA /* HZPtotoBrowser */,
 				EE7E76F91B737FF900959AD8 /* Colours */,
@@ -1226,6 +1348,9 @@
 				3C56EDDD21C68A9B00D9159E /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				EE7E77B61B737FF900959AD8 /* Info.plist in Resources */,
 				3C56EDCB21C68A9B00D9159E /* JSQMessagesViewController.xib in Resources */,
+				3C21845021C8ECA200A8ED5F /* systemEmoji.plist in Resources */,
+				3C21845121C8ECA300A8ED5F /* emotion.plist in Resources */,
+				3C21845221C8ECA300A8ED5F /* face.plist in Resources */,
 				3C56EDD821C68A9B00D9159E /* JSQMessagesToolbarContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1283,11 +1408,11 @@
 				3C56EDD721C68A9B00D9159E /* JSQMessagesCellTextView.m in Sources */,
 				EE7E780B1B737FF900959AD8 /* FileUtil.m in Sources */,
 				3C56EDC521C68A9B00D9159E /* JSQMessagesBubbleImage.m in Sources */,
+				3C21845821C8ECA300A8ED5F /* PanelBottomView.m in Sources */,
 				EE7E783F1B73A79300959AD8 /* MZTableApiViewController.m in Sources */,
 				EE7E77A41B737FF900959AD8 /* BaseViewController.m in Sources */,
-				3C56EDF021C68FC000D9159E /* NSUserDefaults+DemoSettings.m in Sources */,
+				3C21845421C8ECA300A8ED5F /* MoreItem.m in Sources */,
 				EE7E77F01B737FF900959AD8 /* SVWebViewControllerActivityChrome.m in Sources */,
-				3C56EDEA21C68F5D00D9159E /* DemoModelData.m in Sources */,
 				3C56ED5221C14E3C00D9159E /* MZProfileViewController.m in Sources */,
 				EE7E77A51B737FF900959AD8 /* MZModelApiViewController.m in Sources */,
 				3C56EDC021C68A9B00D9159E /* JSQMessagesTimestampFormatter.m in Sources */,
@@ -1296,31 +1421,33 @@
 				EE7E78041B737FF900959AD8 /* UIView+Addition.m in Sources */,
 				EE7E77ED1B737FF900959AD8 /* SVWebViewController.m in Sources */,
 				EE7E78021B737FF900959AD8 /* UINavigationBar+Addition.m in Sources */,
+				3C21846121C8ECA300A8ED5F /* ChatKeyBoard.m in Sources */,
 				EE7E77FD1B737FF900959AD8 /* NSString+Additions.m in Sources */,
 				3C56EDC221C68A9B00D9159E /* JSQAudioMediaItem.m in Sources */,
 				3C56EDDF21C68A9B00D9159E /* UIImage+JSQMessages.m in Sources */,
-				3C56EDE921C68F5D00D9159E /* DemoMessagesViewController.m in Sources */,
 				3C5EC8EC21C0297F00D4BA1A /* MZChatListViewController.m in Sources */,
 				EE7E77B41B737FF900959AD8 /* NSObject+Switch.m in Sources */,
 				3C56EDDC21C68A9B00D9159E /* JSQMessagesTypingView.m in Sources */,
 				EE7E77F61B737FF900959AD8 /* SVWebViewControllerActivity.m in Sources */,
 				EE7E77CC1B737FF900959AD8 /* SBJsonStreamParser.m in Sources */,
+				3C21845521C8ECA300A8ED5F /* ChatToolBarItem.m in Sources */,
 				3C56EDC821C68A9B00D9159E /* JSQMediaItem.m in Sources */,
 				EE7E77A91B737FF900959AD8 /* MZConfig.m in Sources */,
 				3C56EDD521C68A9B00D9159E /* JSQMessagesLabel.m in Sources */,
 				EE7E77EB1B737FF900959AD8 /* SVModalWebViewController.m in Sources */,
 				EE7E77D31B737FF900959AD8 /* SBJsonTokeniser.m in Sources */,
+				3C21845C21C8ECA300A8ED5F /* RFRecordButton.m in Sources */,
 				3CB550D821BF5EB900E897FE /* MZRecommedListView.m in Sources */,
 				EE7E77FF1B737FF900959AD8 /* UIAlertView+Addition.m in Sources */,
 				EE7E77D41B737FF900959AD8 /* SBJsonUTF8Stream.m in Sources */,
+				3C21845721C8ECA300A8ED5F /* FacePanel.m in Sources */,
 				3C56EDC721C68A9B00D9159E /* JSQMessage.m in Sources */,
-				3C5EC8F621C141A600D4BA1A /* MZChatDetailViewController.m in Sources */,
 				3C56EDE221C68A9B00D9159E /* NSString+JSQMessages.m in Sources */,
 				3C21841921C4F23200A8ED5F /* MZNavigationController.m in Sources */,
-				3C56EDEF21C68FC000D9159E /* DemoSettingsViewController.m in Sources */,
 				3C56EDB821C68A9B00D9159E /* JSQMessagesBubblesSizeCalculator.m in Sources */,
 				EED8C4251B9DDF25006C4AA6 /* UIImageView+Addition.m in Sources */,
 				3CB550CF21BF5A4000E897FE /* MZHomeViewController.m in Sources */,
+				3C21845F21C8ECA300A8ED5F /* OfficialAccountToolbar.m in Sources */,
 				3CB550D221BF5E4500E897FE /* MZRecommendViewController.m in Sources */,
 				3C56EDC921C68A9B00D9159E /* JSQVideoMediaItem.m in Sources */,
 				EE7E77FB1B737FF900959AD8 /* NSArray+Addition.m in Sources */,
@@ -1330,14 +1457,18 @@
 				3C3878A321C38AB80017FFBA /* HZPhotoBrowser.m in Sources */,
 				3C56EDD321C68A9B00D9159E /* JSQMessagesCollectionViewCellIncoming.m in Sources */,
 				EE7E78271B73903800959AD8 /* JMStaticTableViewCell.m in Sources */,
+				3C21845A21C8ECA300A8ED5F /* FacePageView.m in Sources */,
 				EE7E77D11B737FF900959AD8 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				3C21845921C8ECA300A8ED5F /* FaceThemeView.m in Sources */,
 				3C3878A521C38AB80017FFBA /* HZPhotoBrowserView.m in Sources */,
 				3C56EDDA21C68A9B00D9159E /* JSQMessagesCollectionView.m in Sources */,
+				3C21846821C8ED7300A8ED5F /* MZMessageViewController.m in Sources */,
 				EE7E78101B73896200959AD8 /* WYSocketObject.m in Sources */,
 				3C56EDBC21C68A9B00D9159E /* JSQMessagesBubbleImageFactory.m in Sources */,
 				3C56EDDB21C68A9B00D9159E /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				3CB550D521BF5EA100E897FE /* MZRecommedListCell.m in Sources */,
 				3C56EDC321C68A9B00D9159E /* JSQMessagesAvatarImage.m in Sources */,
+				3C21845B21C8ECA300A8ED5F /* FaceButton.m in Sources */,
 				EEED17E21B9AC3B9007560F6 /* MZSettingViewController.m in Sources */,
 				3CB550C521BF5A2800E897FE /* MZNearbyView.m in Sources */,
 				EE7E78261B73903800959AD8 /* JMStaticContentTableViewSection.m in Sources */,
@@ -1351,14 +1482,17 @@
 				3C56EDD221C68A9B00D9159E /* JSQMessagesInputToolbar.m in Sources */,
 				3C56EDD921C68A9B00D9159E /* JSQMessagesCollectionViewCell.m in Sources */,
 				3C38789521C266BC0017FFBA /* UIColor+Addition.m in Sources */,
+				3C21845D21C8ECA300A8ED5F /* ChatToolBar.m in Sources */,
 				3C56EDCA21C68A9B00D9159E /* JSQMessagesViewController.m in Sources */,
 				EE7E786B1B75FCFE00959AD8 /* WYCrashFoundation.m in Sources */,
 				3C56EDC621C68A9B00D9159E /* JSQPhotoMediaItem.m in Sources */,
 				EE7E77FC1B737FF900959AD8 /* NSDate+Addition.m in Sources */,
 				3C56EDB721C68A9B00D9159E /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
 				EE7E780A1B737FF900959AD8 /* DateUtil.m in Sources */,
+				3C21845621C8ECA300A8ED5F /* FaceThemeModel.m in Sources */,
 				EE7E77FE1B737FF900959AD8 /* UIActionSheet+Addtions.m in Sources */,
 				3C56EDBE21C68A9B00D9159E /* JSQMessagesToolbarButtonFactory.m in Sources */,
+				3C21845E21C8ECA300A8ED5F /* RFTextView.m in Sources */,
 				EE7E77CD1B737FF900959AD8 /* SBJsonStreamParserAccumulator.m in Sources */,
 				EE7E77D01B737FF900959AD8 /* SBJsonStreamWriter.m in Sources */,
 				EE7E78001B737FF900959AD8 /* UIImage+Addition.m in Sources */,
@@ -1376,6 +1510,7 @@
 				EE7E786E1B777B9B00959AD8 /* MZErrorView.m in Sources */,
 				EE7E77AB1B737FF900959AD8 /* MZRequestSender.m in Sources */,
 				EE7E77CE1B737FF900959AD8 /* SBJsonStreamParserAdapter.m in Sources */,
+				3C21845321C8ECA300A8ED5F /* NSString+Emoji.m in Sources */,
 				3C5EC8F221C1405600D4BA1A /* MZChatListView.m in Sources */,
 				EE7E78541B75AC2600959AD8 /* MZMainAppViewController.m in Sources */,
 				3C56EDBD21C68A9B00D9159E /* JSQMessagesAvatarImageFactory.m in Sources */,
@@ -1396,6 +1531,7 @@
 				EE7E78651B75F63800959AD8 /* UncaughtExceptionHandler.m in Sources */,
 				3C56EDE321C68A9B00D9159E /* UIView+JSQMessages.m in Sources */,
 				EE7E78031B737FF900959AD8 /* UINavigationController+TRVSNavigationControllerTransition.m in Sources */,
+				3C21846021C8ECA300A8ED5F /* MorePanel.m in Sources */,
 				EEDFE95B1B9F27860069D727 /* MZParamsBaseObject.m in Sources */,
 				3C5EC8EF21C1404600D4BA1A /* MZChatListCell.m in Sources */,
 				EE7E77C81B737FF900959AD8 /* PWLoadMoreTableFooterView.m in Sources */,

@@ -104,7 +104,7 @@
     if (!_segmentedControl) {
         NSArray *segmentedArray = [[NSArray alloc] initWithObjects:(@"推荐"), (@"附近"), nil];
         self.segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:segmentedArray];
-        _segmentedControl.frame = CGRectMake((ScreenWidth - 100.)/2, 20. + YCNavbar_DiffH, 100., 30.);
+        _segmentedControl.frame = CGRectMake((ScreenWidth - 100.)/2, 20. + Navbar_DiffH, 100., 30.);
         _segmentedControl.backgroundColor = [UIColor clearColor];
         _segmentedControl.verticalDividerEnabled = YES;
         _segmentedControl.verticalDividerColor = [UIColor whiteColor];
