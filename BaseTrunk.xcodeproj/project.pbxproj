@@ -27,7 +27,10 @@
 		3C21845F21C8ECA300A8ED5F /* OfficialAccountToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844921C8ECA200A8ED5F /* OfficialAccountToolbar.m */; };
 		3C21846021C8ECA300A8ED5F /* MorePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844D21C8ECA200A8ED5F /* MorePanel.m */; };
 		3C21846121C8ECA300A8ED5F /* ChatKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21844F21C8ECA200A8ED5F /* ChatKeyBoard.m */; };
-		3C21846821C8ED7300A8ED5F /* MZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21846721C8ED7300A8ED5F /* MZMessageViewController.m */; };
+		3C21847121C9EB0E00A8ED5F /* MZMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21847021C9EB0E00A8ED5F /* MZMessageViewController.m */; };
+		3C21847721C9EEFE00A8ED5F /* MZMessageSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21847621C9EEFE00A8ED5F /* MZMessageSettingViewController.m */; };
+		3C21847A21C9EF2700A8ED5F /* MZMessageModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21847921C9EF2700A8ED5F /* MZMessageModelData.m */; };
+		3C21847E21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C21847D21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.m */; };
 		3C38789521C266BC0017FFBA /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789421C266BC0017FFBA /* UIColor+Addition.m */; };
 		3C38789821C267850017FFBA /* MZProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789721C267850017FFBA /* MZProfileHeaderView.m */; };
 		3C3878A221C38AB80017FFBA /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C38789A21C38AB80017FFBA /* HZWaitingView.m */; };
@@ -215,8 +218,15 @@
 		3C21844D21C8ECA200A8ED5F /* MorePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePanel.m; sourceTree = "<group>"; };
 		3C21844E21C8ECA200A8ED5F /* MorePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePanel.h; sourceTree = "<group>"; };
 		3C21844F21C8ECA200A8ED5F /* ChatKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKeyBoard.m; sourceTree = "<group>"; };
-		3C21846621C8ED7300A8ED5F /* MZMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZMessageViewController.h; sourceTree = "<group>"; };
-		3C21846721C8ED7300A8ED5F /* MZMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZMessageViewController.m; sourceTree = "<group>"; };
+		3C21846F21C9EB0E00A8ED5F /* MZMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZMessageViewController.h; sourceTree = "<group>"; };
+		3C21847021C9EB0E00A8ED5F /* MZMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZMessageViewController.m; sourceTree = "<group>"; };
+		3C21847521C9EEFE00A8ED5F /* MZMessageSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZMessageSettingViewController.h; sourceTree = "<group>"; };
+		3C21847621C9EEFE00A8ED5F /* MZMessageSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZMessageSettingViewController.m; sourceTree = "<group>"; };
+		3C21847821C9EF2700A8ED5F /* MZMessageModelData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZMessageModelData.h; sourceTree = "<group>"; };
+		3C21847921C9EF2700A8ED5F /* MZMessageModelData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZMessageModelData.m; sourceTree = "<group>"; };
+		3C21847B21C9F73A00A8ED5F /* jsq_messages_sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = jsq_messages_sample.m4a; sourceTree = "<group>"; };
+		3C21847C21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZMessageToolBarActionItem.h; sourceTree = "<group>"; };
+		3C21847D21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZMessageToolBarActionItem.m; sourceTree = "<group>"; };
 		3C38789321C266BC0017FFBA /* UIColor+Addition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		3C38789421C266BC0017FFBA /* UIColor+Addition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
 		3C38789621C267850017FFBA /* MZProfileHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZProfileHeaderView.h; sourceTree = "<group>"; };
@@ -654,8 +664,15 @@
 		3C21846221C8ECE800A8ED5F /* MessageViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3C21846621C8ED7300A8ED5F /* MZMessageViewController.h */,
-				3C21846721C8ED7300A8ED5F /* MZMessageViewController.m */,
+				3C21847B21C9F73A00A8ED5F /* jsq_messages_sample.m4a */,
+				3C21847821C9EF2700A8ED5F /* MZMessageModelData.h */,
+				3C21847921C9EF2700A8ED5F /* MZMessageModelData.m */,
+				3C21846F21C9EB0E00A8ED5F /* MZMessageViewController.h */,
+				3C21847021C9EB0E00A8ED5F /* MZMessageViewController.m */,
+				3C21847C21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.h */,
+				3C21847D21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.m */,
+				3C21847521C9EEFE00A8ED5F /* MZMessageSettingViewController.h */,
+				3C21847621C9EEFE00A8ED5F /* MZMessageSettingViewController.m */,
 			);
 			path = MessageViewController;
 			sourceTree = "<group>";
@@ -1412,6 +1429,7 @@
 				EE7E783F1B73A79300959AD8 /* MZTableApiViewController.m in Sources */,
 				EE7E77A41B737FF900959AD8 /* BaseViewController.m in Sources */,
 				3C21845421C8ECA300A8ED5F /* MoreItem.m in Sources */,
+				3C21847E21C9FE7C00A8ED5F /* MZMessageToolBarActionItem.m in Sources */,
 				EE7E77F01B737FF900959AD8 /* SVWebViewControllerActivityChrome.m in Sources */,
 				3C56ED5221C14E3C00D9159E /* MZProfileViewController.m in Sources */,
 				EE7E77A51B737FF900959AD8 /* MZModelApiViewController.m in Sources */,
@@ -1437,6 +1455,7 @@
 				EE7E77EB1B737FF900959AD8 /* SVModalWebViewController.m in Sources */,
 				EE7E77D31B737FF900959AD8 /* SBJsonTokeniser.m in Sources */,
 				3C21845C21C8ECA300A8ED5F /* RFRecordButton.m in Sources */,
+				3C21847A21C9EF2700A8ED5F /* MZMessageModelData.m in Sources */,
 				3CB550D821BF5EB900E897FE /* MZRecommedListView.m in Sources */,
 				EE7E77FF1B737FF900959AD8 /* UIAlertView+Addition.m in Sources */,
 				EE7E77D41B737FF900959AD8 /* SBJsonUTF8Stream.m in Sources */,
@@ -1462,12 +1481,12 @@
 				3C21845921C8ECA300A8ED5F /* FaceThemeView.m in Sources */,
 				3C3878A521C38AB80017FFBA /* HZPhotoBrowserView.m in Sources */,
 				3C56EDDA21C68A9B00D9159E /* JSQMessagesCollectionView.m in Sources */,
-				3C21846821C8ED7300A8ED5F /* MZMessageViewController.m in Sources */,
 				EE7E78101B73896200959AD8 /* WYSocketObject.m in Sources */,
 				3C56EDBC21C68A9B00D9159E /* JSQMessagesBubbleImageFactory.m in Sources */,
 				3C56EDDB21C68A9B00D9159E /* JSQMessagesCollectionViewCellOutgoing.m in Sources */,
 				3CB550D521BF5EA100E897FE /* MZRecommedListCell.m in Sources */,
 				3C56EDC321C68A9B00D9159E /* JSQMessagesAvatarImage.m in Sources */,
+				3C21847721C9EEFE00A8ED5F /* MZMessageSettingViewController.m in Sources */,
 				3C21845B21C8ECA300A8ED5F /* FaceButton.m in Sources */,
 				EEED17E21B9AC3B9007560F6 /* MZSettingViewController.m in Sources */,
 				3CB550C521BF5A2800E897FE /* MZNearbyView.m in Sources */,
@@ -1539,6 +1558,7 @@
 				EE7E77CA1B737FF900959AD8 /* NSObject+SBJson.m in Sources */,
 				3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */,
 				EE7E78241B73903800959AD8 /* JMStaticContentTableViewCell.m in Sources */,
+				3C21847121C9EB0E00A8ED5F /* MZMessageViewController.m in Sources */,
 				EE7E77D51B737FF900959AD8 /* SBJsonWriter.m in Sources */,
 				3C3878A221C38AB80017FFBA /* HZWaitingView.m in Sources */,
 			);
