@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) MZVideoListInfoObject *videoListInfoObject;
 @property (nonatomic, strong) MZMessageModelData *modelData;
+@property (nonatomic, strong) UIButton *voiceButtonItem;
 @property (nonatomic, strong) UIButton *recordButtonItem;
 
 @end
@@ -39,6 +40,7 @@
 {
     [super viewDidAppear:animated];
     self.collectionView.collectionViewLayout.springinessEnabled = NO;
+    [self scrollAnimalWithType:AnimalTypeNormal];
 }
 
 - (void)viewDidLoad
@@ -48,36 +50,34 @@
     self.title = self.videoListInfoObject.nickname;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(closePressed:)];
-    
-    self.inputToolbar.contentView.textView.pasteDelegate = self;
+
     self.modelData = [[MZMessageModelData alloc] init];
+    [self.collectionView reloadData];
+    self.inputToolbar.preferredDefaultHeight = 50;
+    self.inputToolbar.maximumHeight = 50;
+    self.inputToolbar.contentView.textView.pasteDelegate = self;
     self.collectionView.accessoryDelegate = self;
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
     self.showLoadEarlierMessagesHeader = YES;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage]
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:self
-                                                                             action:@selector(receiveMessagePressed:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage jsq_defaultTypingIndicatorImage] style:UIBarButtonItemStylePlain target:self action:@selector(receiveMessagePressed:)];
     
-
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(customAction:)];
     [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
     
     self.inputToolbar.contentView.leftBarButtonItem = nil;
     self.inputToolbar.contentView.rightBarButtonItem = nil;
     
-    MZMessageToolBarActionItem *messageToolBarActionItem = [[MZMessageToolBarActionItem alloc] init];
+    MZMessageToolBarActionItem *messageToolBarActionItem = [MZMessageToolBarActionItem new];
     messageToolBarActionItem.delegate = self;
     
-    UIButton *leftItem = [messageToolBarActionItem voiceButtonItem];
-    [self.inputToolbar.contentView addSubview:leftItem];
-    self.inputToolbar.contentView.leftContentPadding = leftItem.width + kActionViewPadding;
+    self.voiceButtonItem = [messageToolBarActionItem voiceButtonItem];
+    [self.inputToolbar.contentView addSubview:self.voiceButtonItem];
+    self.inputToolbar.contentView.leftContentPadding = self.voiceButtonItem.width + kActionViewPadding;
     
     UIView *rightItems = [messageToolBarActionItem rightBarItems];
     [self.inputToolbar.contentView addSubview:rightItems];
     self.inputToolbar.contentView.rightContentPadding = rightItems.width + kActionViewPadding;
-    self.inputToolbar.maximumHeight = Tabbar_Height;
     
     self.recordButtonItem = [messageToolBarActionItem recordButtonItem];
     self.recordButtonItem.frame = self.inputToolbar.contentView.textView.frame;
@@ -85,19 +85,133 @@
     [self.inputToolbar.contentView addSubview:self.recordButtonItem];
 }
 
+- (void)setInputViewToView:(UIView *)view showInput:(BOOL)show
+{
+    //    [view setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin]
+    UITextView *inputView = self.inputToolbar.contentView.textView;
+    
+    if (self.automaticallyScrollsToMostRecentMessage) {
+        [self scrollToBottomAnimated:YES];
+    }
+    
+    if(1)
+    {
+        [view setTop:self.view.height];
+        
+        __weak typeof(self) block_self = self;
+        
+        [UIView animateWithDuration:0.26 animations:^{
+            [view setHidden:NO];
+            view.top = block_self.view.height - 217;
+            [view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+            
+        }];
+    }
+    else
+    {
+        [view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+        [view setHidden:NO];
+    }
+    
+    [self changeKeyboardFrame:CGRectMake(0, 0, ScreenWidth, view?view.height:217)];
+//    [self.keyboardController.contextView endEditing:YES];
+    [self showKeyboardView:view];
+}
+
+- (void)showKeyboardView:(UIView *)view
+{
+    CGRect imagePickerViewInitialFrame = CGRectMake(0, self.inputToolbar.bottom, 0, 0);
+    view.frame = imagePickerViewInitialFrame;
+    [UIView animateWithDuration:0 animations:^{
+        view.frame = CGRectMake(0, self.view.height - 217, ScreenWidth, 217);
+    }];
+}
+
+- (void)changeKeyboardFrame:(CGRect)keyboardFrame
+{
+    CGFloat heightFromBottom = CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(keyboardFrame);
+    heightFromBottom = MAX(0.0f, heightFromBottom);
+    
+    [self.view setNeedsUpdateConstraints];
+    [self.view layoutIfNeeded];
+    
+    UIEdgeInsets insets = UIEdgeInsetsMake(self.additionalContentInset.top+10, 0.0f,
+                                           CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame), 0.0f);
+    
+    [self.collectionView setContentInset:insets];
+    self.collectionView.scrollIndicatorInsets = insets;
+    NSLog(@"insets  %@  heightFromBottom %f",NSStringFromUIEdgeInsets(insets), heightFromBottom);
+//    _chatCoverView.transform = CGAffineTransformMakeTranslation(0, -heightFromBottom);
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    
+    [self scrollToBottomAnimated:YES];
+    //[self finishReceivingMessageAnimated:YES];
+}
+
 - (void)messageToolbarVoiceButtonPressed
 {
+    NSLog(@"voice");
+    self.voiceButtonItem.selected = !self.voiceButtonItem.selected;
     self.recordButtonItem.hidden = !self.recordButtonItem.hidden;
+    [self scrollAnimalWithType:AnimalTypeNormal];
 }
 
 - (void)messageToolbarFaceButtonPressed
 {
+    [self scrollAnimalWithType:AnimalTypeFace];
     NSLog(@"face");
 }
 
 - (void)messageToolbarMoreButtonPressed
 {
+    [self scrollAnimalWithType:AnimalTypeMore];
     NSLog(@"more");
+}
+
+- (void)messageToolbarRecordBegin
+{
+    NSLog(@"record begin");
+}
+
+- (void)messageToolbarRecordFinish
+{
+    NSLog(@"record finish");
+}
+
+- (void)messageToolbarRecordCancel
+{
+    NSLog(@"record cancel");
+}
+
+- (void)messageToolbarRecordGoOn
+{
+    NSLog(@"record goon");
+}
+
+- (void)messageToolbarRecordWillCancel
+{
+    NSLog(@"record will cancel");
+}
+
+- (void)scrollAnimalWithType:(AnimalTypeAction)type
+{
+    [self.inputToolbar.contentView.textView resignFirstResponder];
+    [UIView animateWithDuration:0.27 animations:^{
+        switch (type) {
+            case AnimalTypeNormal:
+                self.inputToolbar.top = -TabBar_DiffH;
+                break;
+            case AnimalTypeFace:
+            case AnimalTypeMore:
+                self.inputToolbar.top = -200;
+                break;
+            default:
+                break;
+        }
+        self.view.bottom = ScreenHeight - (-self.inputToolbar.top);
+//        [self scrollToBottomAnimated:YES];
+    }];
 }
 
 #pragma mark - Custom menu actions for cells

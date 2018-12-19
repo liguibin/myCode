@@ -16,7 +16,7 @@
     button.frame = CGRectMake(0., 0., kActionViewWidth, kActionViewWidth);
     [button setTitle:@"voice" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
     if (self.delegate && [self.delegate respondsToSelector:@selector(messageToolbarVoiceButtonPressed)]) {
         [button addTarget:self.delegate action:@selector(messageToolbarVoiceButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -68,53 +68,31 @@
 - (UIButton *)recordButtonItem
 {
     UIButton *recordButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    recordButton.frame = CGRectMake(0., 0., kActionViewWidth, kActionViewWidth);
+    recordButton.frame = CGRectZero;
     [recordButton setTitle:@"按住 说话" forState:UIControlStateNormal];
     [recordButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    [recordButton addTarget:self action:@selector(recordTouchDown:) forControlEvents:UIControlEventTouchDown];
-    [recordButton addTarget:self action:@selector(recordTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
-    [recordButton addTarget:self action:@selector(recordTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
-    [recordButton addTarget:self action:@selector(recordTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
-    [recordButton addTarget:self action:@selector(recordTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
-    [recordButton addTarget:self action:@selector(recordTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
-    [recordButton addTarget:self action:@selector(recordTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messageToolbarRecordBegin)]) {
+        [recordButton addTarget:self.delegate action:@selector(messageToolbarRecordBegin) forControlEvents:UIControlEventTouchDown];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messageToolbarRecordCancel)]) {
+        [recordButton addTarget:self.delegate action:@selector(messageToolbarRecordCancel) forControlEvents:UIControlEventTouchUpOutside];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messageToolbarRecordFinish)]) {
+        [recordButton addTarget:self.delegate action:@selector(messageToolbarRecordFinish) forControlEvents:UIControlEventTouchUpInside];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messageToolbarRecordGoOn)]) {
+        [recordButton addTarget:self.delegate action:@selector(messageToolbarRecordGoOn) forControlEvents:UIControlEventTouchDragEnter];
+    }
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(recordTouchDragInside:)]) {
+//        [recordButton addTarget:self.delegate action:@selector(recordTouchDragInside:) forControlEvents:UIControlEventTouchDragInside];
+//    }
+    //    if (self.delegate && [self.delegate respondsToSelector:@selector(recordTouchDragOutside:)]) {
+    //        [recordButton addTarget:self.delegate action:@selector(recordTouchDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+//    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(messageToolbarRecordGoOn)]) {
+        [recordButton addTarget:self.delegate action:@selector(messageToolbarRecordGoOn) forControlEvents:UIControlEventTouchDragExit];
+    }
     return recordButton;
-}
-
-- (void)recordTouchDown:(UIButton *)button
-{
-    [button setTitle:@"松开 结束" forState:UIControlStateNormal];
-    NSLog(@"开始录音");
-}
-
-- (void)recordTouchUpOutside:(UIButton *)button
-{
-    NSLog(@"取消录音");
-}
-
-- (void)recordTouchUpInside:(UIButton *)button
-{
-    NSLog(@"完成录音");
-}
-
-- (void)recordTouchDragEnter:(UIButton *)button
-{
-    NSLog(@"继续录音");
-}
-
-- (void)recordTouchDragInside:(UIButton *)button
-{
-    
-}
-
-- (void)recordTouchDragOutside:(UIButton *)button
-{
-    
-}
-
-- (void)recordTouchDragExit:(UIButton *)button
-{
-    NSLog(@"将要取消录音");
 }
 
 @end

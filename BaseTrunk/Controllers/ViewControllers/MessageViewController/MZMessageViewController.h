@@ -9,6 +9,15 @@
 #import "JSQMessagesViewController.h"
 #import "MZVideoListObject.h"
 
+typedef NS_ENUM(NSInteger, AnimalTypeAction)
+{
+    AnimalTypeNormal,
+    AnimalTypeEdit,
+    AnimalTypeVoice,
+    AnimalTypeFace,
+    AnimalTypeMore
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MZMessageViewController : JSQMessagesViewController 

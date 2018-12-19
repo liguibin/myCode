@@ -20,6 +20,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)messageToolbarFaceButtonPressed;
 - (void)messageToolbarMoreButtonPressed;
 
+- (void)messageToolbarRecordBegin;
+- (void)messageToolbarRecordFinish;
+- (void)messageToolbarRecordCancel;
+- (void)messageToolbarRecordGoOn;
+- (void)messageToolbarRecordWillCancel;
+
 @end
 
 @interface MZMessageToolBarActionItem : NSObject
