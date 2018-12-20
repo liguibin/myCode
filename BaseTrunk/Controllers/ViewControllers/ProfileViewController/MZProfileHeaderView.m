@@ -34,6 +34,11 @@
 
 - (void)createSubView
 {
+    self.backgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
+    self.backgroundView.clipsToBounds = YES;
+    self.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
+    [self addSubview:self.backgroundView];
+    
     self.avatarView = [[FLAnimatedImageView alloc] initWithFrame:CGRectMake((ScreenWidth - 80.) / 2., 40., 80., 80.)];
     self.avatarView.userInteractionEnabled = YES;
     self.avatarView.contentMode = UIViewContentModeScaleAspectFill;
@@ -58,6 +63,7 @@
         self.videoListInfoObject = [MZVideoListInfoObject new];
     }
     if (object && [self.videoListInfoObject parseData:object]) {
+        [self.backgroundView sd_setImageWithURL:[MZConfig getImageUrl:self.videoListInfoObject.coverUrl] placeholderImage:[UIImage imageNamed:@"goldengate"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
         [self.avatarView sd_setImageWithURL:[MZConfig getImageUrl:self.videoListInfoObject.coverUrl] placeholderImage:[UIImage imageNamed:@"whiteplaceholder.png"] options:SDWebImageLowPriority|SDWebImageRetryFailed completed:nil];
         [self.nameLabel setText:self.videoListInfoObject.nickname];
         [self.nameLabel sizeToFit];

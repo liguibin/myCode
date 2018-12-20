@@ -66,6 +66,20 @@
     return videoListObejct;
 }
 
+#pragma mark - scroll
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [super scrollViewDidScroll:scrollView];
+    CGFloat offsetY = scrollView.contentOffset.y;
+    if (offsetY < 0) {
+        CGRect rect = self.tableHeaderView.backgroundView.frame;
+        rect.origin.y = offsetY;
+        rect.size.height = self.tableHeaderView.backgroundView.height - offsetY;
+        self.tableHeaderView.backgroundView.frame = rect;
+        NSLog(@"%f %f", rect.size.width, rect.size.height);
+    }
+}
+
 - (Class)cellClass
 {
     return [UITableViewCell class];

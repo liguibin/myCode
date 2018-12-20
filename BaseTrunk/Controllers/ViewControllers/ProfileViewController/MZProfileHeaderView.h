@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MZProfileHeaderView : UIView
 
+@property (nonatomic, retain) UIImageView *backgroundView;
+
 - (void)setObjectWithObejct:(id)object;
 + (CGFloat)getHeaderHeight;
 

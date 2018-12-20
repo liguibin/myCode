@@ -111,7 +111,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 @interface JSQMessagesViewController () <JSQMessagesInputToolbarDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesCollectionView *collectionView;
-@property (strong, nonatomic) IBOutlet JSQMessagesInputToolbar *inputToolbar;
+@property (strong, nonatomic) JSQMessagesInputToolbar *inputToolbar;
 
 @property (nonatomic) NSLayoutConstraint *toolbarHeightConstraint;
 
@@ -154,12 +154,15 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
 
+    self.inputToolbar = [[JSQMessagesInputToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.size.width, 44)];
+    [self.view addSubview:self.inputToolbar];
+    
     self.inputToolbar.delegate = self;
     self.inputToolbar.contentView.textView.placeHolder = [NSBundle jsq_localizedStringForKey:@"new_message"];
     self.inputToolbar.contentView.textView.accessibilityLabel = [NSBundle jsq_localizedStringForKey:@"new_message"];
     self.inputToolbar.contentView.textView.delegate = self;
     self.inputToolbar.contentView.textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-//    [self.inputToolbar removeFromSuperview];
+
 
     self.automaticallyScrollsToMostRecentMessage = YES;
 
@@ -171,7 +174,7 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
 
     // NOTE: let this behavior be opt-in for now
     // [JSQMessagesCollectionViewCell registerMenuAction:@selector(delete:)];
-
+    
     self.showTypingIndicator = NO;
 
     self.showLoadEarlierMessagesHeader = NO;

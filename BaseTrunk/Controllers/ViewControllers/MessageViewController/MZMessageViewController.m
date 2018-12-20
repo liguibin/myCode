@@ -70,8 +70,10 @@
     
     self.modelData = [[MZMessageModelData alloc] init];
     [self.collectionView reloadData];
-    self.inputToolbar.preferredDefaultHeight = 44 + TabBar_DiffH;
-    self.inputToolbar.maximumHeight = 44 + TabBar_DiffH;
+//    self.inputToolbar.preferredDefaultHeight = 44 + TabBar_DiffH;
+//    self.inputToolbar.maximumHeight = 44 + TabBar_DiffH;
+    self.inputToolbar.height = 44 + TabBar_DiffH;
+    self.inputToolbar.bottom = self.view.height;
     self.inputToolbar.contentView.textView.pasteDelegate = self;
     self.inputToolbar.contentView.textView.keyboardAppearance= UIKeyboardAppearanceAlert;
     self.collectionView.accessoryDelegate = self;
@@ -100,7 +102,7 @@
     self.recordButtonItem = [messageToolBarActionItem recordButtonItem];
     self.recordButtonItem.frame = self.inputToolbar.contentView.textView.frame;
     self.recordButtonItem.hidden = YES;
-    [self.inputToolbar.contentView addSubview:self.recordButtonItem];
+    [self.inputToolbar.contentView addSubview:self.recordButtonItem];    
 }
 
 //- (void)setInputViewToView:(UIView *)view showInput:(BOOL)show
@@ -235,12 +237,16 @@
     self.animalTypeAction = type;
     switch (type) {
         case AnimalTypeNormal:
+            self.inputToolbar.height = 44 + TabBar_DiffH;
+            self.inputToolbar.bottom = self.view.height;
             if (![self.inputToolbar.contentView.textView resignFirstResponder]) {
                 [self changeViewFrameWithBottom:ScreenHeight];
             }
             break;
         case AnimalTypeFace:
         case AnimalTypeMore:
+            self.inputToolbar.height = 44;
+            self.inputToolbar.bottom = self.view.height;
             [self changeViewFrameWithBottom:ScreenHeight - 200];
             [self.inputToolbar.contentView.textView resignFirstResponder];
             if (self.voiceButtonItem.isSelected) {
@@ -252,7 +258,13 @@
             }
             break;
         case AnimalTypeEdit:
-            [self.inputToolbar.contentView.textView becomeFirstResponder];
+            if ([self.inputToolbar.contentView.textView canBecomeFirstResponder]) {
+                if (![self.inputToolbar.contentView.textView isFirstResponder]) {
+                    self.inputToolbar.height = 44;
+                    self.inputToolbar.bottom = self.view.height;
+                    [self.inputToolbar.contentView.textView becomeFirstResponder];
+                }
+            }
             break;
         default:
             break;

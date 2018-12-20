@@ -43,37 +43,47 @@ static void * kJSQMessagesInputToolbarKeyValueObservingContext = &kJSQMessagesIn
 
 #pragma mark - Initialization
 
-- (void)awakeFromNib
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    [super awakeFromNib];
-    self.backgroundColor = [UIColor whiteColor];
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        [self layoutIfNeeded];
+        [self loadOther];
+    }
+    return self;
+}
+
+- (void)loadOther
+{
     self.jsq_isObserving = NO;
     self.sendButtonLocation = JSQMessagesInputSendButtonLocationRight;
     self.enablesSendButtonAutomatically = YES;
-
+    
     self.preferredDefaultHeight = 44.0f;
     self.maximumHeight = NSNotFound;
     
     JSQMessagesToolbarContentView *toolbarContentView = [self loadToolbarContentView];
-    toolbarContentView.frame = self.frame;
+    toolbarContentView.frame = CGRectMake(0, 0, self.frame.size.width, self.preferredDefaultHeight);
     [self addSubview:toolbarContentView];
     [self jsq_pinAllEdgesOfSubview:toolbarContentView];
     [self setNeedsUpdateConstraints];
     _contentView = toolbarContentView;
-
+    
     [self jsq_addObservers];
-
+    
     JSQMessagesToolbarButtonFactory *toolbarButtonFactory = [[JSQMessagesToolbarButtonFactory alloc] initWithFont:[UIFont preferredFontForTextStyle:UIFontTextStyleHeadline]];
     self.contentView.leftBarButtonItem = [toolbarButtonFactory defaultAccessoryButtonItem];
     self.contentView.rightBarButtonItem = [toolbarButtonFactory defaultSendButtonItem];
-
+    
     [self updateSendButtonEnabledState];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(textViewTextDidChangeNotification:)
                                                  name:UITextViewTextDidChangeNotification
                                                object:_contentView.textView];
 }
+
 
 - (JSQMessagesToolbarContentView *)loadToolbarContentView
 {
