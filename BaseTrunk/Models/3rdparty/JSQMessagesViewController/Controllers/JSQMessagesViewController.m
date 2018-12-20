@@ -947,9 +947,9 @@ static void JSQInstallWorkaroundForSheetPresentationIssue26295020(void) {
                           delay:0.0
                         options:animationCurveOption
                      animations:^{
-                         const UIEdgeInsets insets = self.additionalContentInset;
-                         [self jsq_setCollectionViewInsetsTopValue:insets.top
-                                                       bottomValue:CGRectGetHeight(keyboardEndFrame) + insets.bottom];
+//                         const UIEdgeInsets insets = self.additionalContentInset;
+//                         [self jsq_setCollectionViewInsetsTopValue:insets.top
+//                                                       bottomValue:CGRectGetHeight(keyboardEndFrame) + insets.bottom];
                      }
                      completion:nil];
 }

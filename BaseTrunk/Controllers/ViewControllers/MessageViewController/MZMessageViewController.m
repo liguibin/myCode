@@ -17,6 +17,7 @@
 @property (nonatomic, strong) MZMessageModelData *modelData;
 @property (nonatomic, strong) UIButton *voiceButtonItem;
 @property (nonatomic, strong) UIButton *recordButtonItem;
+@property (nonatomic, assign) AnimalTypeAction animalTypeAction;
 
 @end
 
@@ -40,7 +41,22 @@
 {
     [super viewDidAppear:animated];
     self.collectionView.collectionViewLayout.springinessEnabled = NO;
-    [self scrollAnimalWithType:AnimalTypeNormal];
+    self.animalTypeAction = AnimalTypeNormal;
+    if (self.inputToolbar.bottom != self.view.height) {
+        [self scrollAnimalWithType:AnimalTypeNormal];
+    }
+}
+
+- (void)registerNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)removeNotification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidLoad
@@ -50,12 +66,14 @@
     self.title = self.videoListInfoObject.nickname;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(closePressed:)];
-
+    [self registerNotification];
+    
     self.modelData = [[MZMessageModelData alloc] init];
     [self.collectionView reloadData];
-    self.inputToolbar.preferredDefaultHeight = 50;
-    self.inputToolbar.maximumHeight = 50;
+    self.inputToolbar.preferredDefaultHeight = 44 + TabBar_DiffH;
+    self.inputToolbar.maximumHeight = 44 + TabBar_DiffH;
     self.inputToolbar.contentView.textView.pasteDelegate = self;
+    self.inputToolbar.contentView.textView.keyboardAppearance= UIKeyboardAppearanceAlert;
     self.collectionView.accessoryDelegate = self;
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
@@ -85,76 +103,94 @@
     [self.inputToolbar.contentView addSubview:self.recordButtonItem];
 }
 
-- (void)setInputViewToView:(UIView *)view showInput:(BOOL)show
-{
-    //    [view setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin]
-    UITextView *inputView = self.inputToolbar.contentView.textView;
-    
-    if (self.automaticallyScrollsToMostRecentMessage) {
-        [self scrollToBottomAnimated:YES];
-    }
-    
-    if(1)
-    {
-        [view setTop:self.view.height];
-        
-        __weak typeof(self) block_self = self;
-        
-        [UIView animateWithDuration:0.26 animations:^{
-            [view setHidden:NO];
-            view.top = block_self.view.height - 217;
-            [view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-            
-        }];
-    }
-    else
-    {
-        [view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
-        [view setHidden:NO];
-    }
-    
-    [self changeKeyboardFrame:CGRectMake(0, 0, ScreenWidth, view?view.height:217)];
-//    [self.keyboardController.contextView endEditing:YES];
-    [self showKeyboardView:view];
-}
+//- (void)setInputViewToView:(UIView *)view showInput:(BOOL)show
+//{
+//    //    [view setAutoresizingMask:UIViewAutoresizingFlexibleBottomMargin]
+//    UITextView *inputView = self.inputToolbar.contentView.textView;
+//
+//    if (self.automaticallyScrollsToMostRecentMessage) {
+//        [self scrollToBottomAnimated:YES];
+//    }
+//
+//    if(1)
+//    {
+//        [view setTop:self.view.height];
+//
+//        __weak typeof(self) block_self = self;
+//
+//        [UIView animateWithDuration:0.26 animations:^{
+//            [view setHidden:NO];
+//            view.top = block_self.view.height - 217;
+//            [view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+//
+//        }];
+//    }
+//    else
+//    {
+//        [view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
+//        [view setHidden:NO];
+//    }
+//
+//    [self changeKeyboardFrame:CGRectMake(0, 0, ScreenWidth, view?view.height:217)];
+////    [self.keyboardController.contextView endEditing:YES];
+//    [self showKeyboardView:view];
+////}
+//
+//- (void)showKeyboardView:(UIView *)view
+//{
+//    CGRect imagePickerViewInitialFrame = CGRectMake(0, self.inputToolbar.bottom, 0, 0);
+//    view.frame = imagePickerViewInitialFrame;
+//    [UIView animateWithDuration:0 animations:^{
+//        view.frame = CGRectMake(0, self.view.height - 217, ScreenWidth, 217);
+//    }];
+//}
+//
+//- (void)changeKeyboardFrame:(CGRect)keyboardFrame
+//{
+//    CGFloat heightFromBottom = CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(keyboardFrame);
+//    heightFromBottom = MAX(0.0f, heightFromBottom);
+//
+//    [self.view setNeedsUpdateConstraints];
+//    [self.view layoutIfNeeded];
+//
+//    UIEdgeInsets insets = UIEdgeInsetsMake(self.additionalContentInset.top+10, 0.0f,
+//                                           CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame), 0.0f);
+//
+//    [self.collectionView setContentInset:insets];
+//    self.collectionView.scrollIndicatorInsets = insets;
+//    NSLog(@"insets  %@  heightFromBottom %f",NSStringFromUIEdgeInsets(insets), heightFromBottom);
+////    _chatCoverView.transform = CGAffineTransformMakeTranslation(0, -heightFromBottom);
+//    // If active text field is hidden by keyboard, scroll it so it's visible
+//    // Your application might not need or want this behavior.
+//
+//    [self scrollToBottomAnimated:YES];
+//    //[self finishReceivingMessageAnimated:YES];
+//}
 
-- (void)showKeyboardView:(UIView *)view
-{
-    CGRect imagePickerViewInitialFrame = CGRectMake(0, self.inputToolbar.bottom, 0, 0);
-    view.frame = imagePickerViewInitialFrame;
-    [UIView animateWithDuration:0 animations:^{
-        view.frame = CGRectMake(0, self.view.height - 217, ScreenWidth, 217);
-    }];
-}
 
-- (void)changeKeyboardFrame:(CGRect)keyboardFrame
+- (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    CGFloat heightFromBottom = CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(keyboardFrame);
-    heightFromBottom = MAX(0.0f, heightFromBottom);
-    
-    [self.view setNeedsUpdateConstraints];
-    [self.view layoutIfNeeded];
-    
-    UIEdgeInsets insets = UIEdgeInsetsMake(self.additionalContentInset.top+10, 0.0f,
-                                           CGRectGetMaxY(self.collectionView.frame) - CGRectGetMinY(self.inputToolbar.frame), 0.0f);
-    
-    [self.collectionView setContentInset:insets];
-    self.collectionView.scrollIndicatorInsets = insets;
-    NSLog(@"insets  %@  heightFromBottom %f",NSStringFromUIEdgeInsets(insets), heightFromBottom);
-//    _chatCoverView.transform = CGAffineTransformMakeTranslation(0, -heightFromBottom);
-    // If active text field is hidden by keyboard, scroll it so it's visible
-    // Your application might not need or want this behavior.
-    
-    [self scrollToBottomAnimated:YES];
-    //[self finishReceivingMessageAnimated:YES];
+    [super textViewDidBeginEditing:textView];
+    [self scrollAnimalWithType:AnimalTypeEdit];
 }
 
 - (void)messageToolbarVoiceButtonPressed
 {
     NSLog(@"voice");
-    self.voiceButtonItem.selected = !self.voiceButtonItem.selected;
-    self.recordButtonItem.hidden = !self.recordButtonItem.hidden;
-    [self scrollAnimalWithType:AnimalTypeNormal];
+    [self setVoicButtonItemStatusActionWithSelected:!self.voiceButtonItem.selected];
+}
+
+- (void)setVoicButtonItemStatusWithSelected:(BOOL)selected
+{
+    self.voiceButtonItem.selected = selected;
+    self.recordButtonItem.alpha = 1;
+    self.recordButtonItem.hidden = !selected;
+}
+
+- (void)setVoicButtonItemStatusActionWithSelected:(BOOL)selected
+{
+    [self setVoicButtonItemStatusWithSelected:selected];
+    [self scrollAnimalWithType:selected ? AnimalTypeNormal :AnimalTypeEdit];
 }
 
 - (void)messageToolbarFaceButtonPressed
@@ -196,22 +232,88 @@
 
 - (void)scrollAnimalWithType:(AnimalTypeAction)type
 {
-    [self.inputToolbar.contentView.textView resignFirstResponder];
+    self.animalTypeAction = type;
+    switch (type) {
+        case AnimalTypeNormal:
+            if (![self.inputToolbar.contentView.textView resignFirstResponder]) {
+                [self changeViewFrameWithBottom:ScreenHeight];
+            }
+            break;
+        case AnimalTypeFace:
+        case AnimalTypeMore:
+            [self changeViewFrameWithBottom:ScreenHeight - 200];
+            [self.inputToolbar.contentView.textView resignFirstResponder];
+            if (self.voiceButtonItem.isSelected) {
+                [UIView animateWithDuration:0.27 animations:^{
+                    self.recordButtonItem.alpha = 0.;
+                } completion:^(BOOL finished) {
+                    [self setVoicButtonItemStatusWithSelected:NO];
+                }];
+            }
+            break;
+        case AnimalTypeEdit:
+            [self.inputToolbar.contentView.textView becomeFirstResponder];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)changeViewFrameWithBottom:(CGFloat)bottom
+{
     [UIView animateWithDuration:0.27 animations:^{
-        switch (type) {
-            case AnimalTypeNormal:
-                self.inputToolbar.top = -TabBar_DiffH;
-                break;
-            case AnimalTypeFace:
-            case AnimalTypeMore:
-                self.inputToolbar.top = -200;
-                break;
-            default:
-                break;
-        }
-        self.view.bottom = ScreenHeight - (-self.inputToolbar.top);
-//        [self scrollToBottomAnimated:YES];
+        self.view.bottom = bottom;
     }];
+}
+
+- (void)KeyboardWillShowNotification:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    
+    CGRect keyboardEndFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    if (CGRectIsNull(keyboardEndFrame)) {
+        return;
+    }
+    
+    UIViewAnimationCurve animationCurve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    NSInteger animationCurveOption = (animationCurve << 16);
+    
+    double animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurveOption
+                     animations:^{
+                         self.view.bottom = ScreenHeight - keyboardEndFrame.size.height;
+                     }
+                     completion:nil];
+}
+
+- (void)KeyboardWillHideNotification:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    
+    CGRect keyboardEndFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    if (CGRectIsNull(keyboardEndFrame)) {
+        return;
+    }
+    
+    UIViewAnimationCurve animationCurve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    NSInteger animationCurveOption = (animationCurve << 16);
+    
+    double animationDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    [UIView animateWithDuration:animationDuration
+                          delay:0.0
+                        options:animationCurveOption
+                     animations:^{
+                         if (self.animalTypeAction != AnimalTypeFace && self.animalTypeAction != AnimalTypeMore) {
+                             self.view.bottom = ScreenHeight;
+                         }
+                     }
+                     completion:nil];
 }
 
 #pragma mark - Custom menu actions for cells

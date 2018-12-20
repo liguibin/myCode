@@ -1318,6 +1318,7 @@
 				TargetAttributes = {
 					EE83F6F11B5D174A007CBF95 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = MBH6JVND78;
 					};
 				};
 			};
@@ -1675,6 +1676,7 @@
 			baseConfigurationReference = 45EE791A413CDB58EF1746BF /* Pods-BaseTrunk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MBH6JVND78;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaseTrunk/Models",
@@ -1693,6 +1695,7 @@
 			baseConfigurationReference = C535927E4C7D91333E6E120B /* Pods-BaseTrunk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MBH6JVND78;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaseTrunk/Models",
