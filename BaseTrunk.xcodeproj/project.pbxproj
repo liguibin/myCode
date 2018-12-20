@@ -83,6 +83,7 @@
 		3C56EDE121C68A9B00D9159E /* NSBundle+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDB121C68A9B00D9159E /* NSBundle+JSQMessages.m */; };
 		3C56EDE221C68A9B00D9159E /* NSString+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDB221C68A9B00D9159E /* NSString+JSQMessages.m */; };
 		3C56EDE321C68A9B00D9159E /* UIView+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDB521C68A9B00D9159E /* UIView+JSQMessages.m */; };
+		3C56EDF321CBDE1300D9159E /* MZUserProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C56EDF221CBDE1300D9159E /* MZUserProfileController.m */; };
 		3C5EC8BE21BD206100D4BA1A /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */; };
 		3C5EC8C121BD232D00D4BA1A /* GlobalHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8C021BD232D00D4BA1A /* GlobalHelp.m */; };
 		3C5EC8EC21C0297F00D4BA1A /* MZChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EC8EB21C0297F00D4BA1A /* MZChatListViewController.m */; };
@@ -333,6 +334,8 @@
 		3C56EDB421C68A9B00D9159E /* UIImage+JSQMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JSQMessages.h"; sourceTree = "<group>"; };
 		3C56EDB521C68A9B00D9159E /* UIView+JSQMessages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JSQMessages.m"; sourceTree = "<group>"; };
 		3C56EDB621C68A9B00D9159E /* NSBundle+JSQMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JSQMessages.h"; sourceTree = "<group>"; };
+		3C56EDF121CBDE1300D9159E /* MZUserProfileController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MZUserProfileController.h; sourceTree = "<group>"; };
+		3C56EDF221CBDE1300D9159E /* MZUserProfileController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MZUserProfileController.m; sourceTree = "<group>"; };
 		3C5EC8BC21BD206100D4BA1A /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		3C5EC8BD21BD206100D4BA1A /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		3C5EC8BF21BD232D00D4BA1A /* GlobalHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalHelp.h; sourceTree = "<group>"; };
@@ -699,6 +702,8 @@
 				3C56ED5121C14E3C00D9159E /* MZProfileViewController.m */,
 				3C38789621C267850017FFBA /* MZProfileHeaderView.h */,
 				3C38789721C267850017FFBA /* MZProfileHeaderView.m */,
+				3C56EDF121CBDE1300D9159E /* MZUserProfileController.h */,
+				3C56EDF221CBDE1300D9159E /* MZUserProfileController.m */,
 			);
 			path = ProfileViewController;
 			sourceTree = "<group>";
@@ -1542,6 +1547,7 @@
 				EE7E78431B73AACC00959AD8 /* MZCollectionApiViewController.m in Sources */,
 				3C56EDE121C68A9B00D9159E /* NSBundle+JSQMessages.m in Sources */,
 				3C56EDCC21C68A9B00D9159E /* JSQMessagesComposerTextView.m in Sources */,
+				3C56EDF321CBDE1300D9159E /* MZUserProfileController.m in Sources */,
 				3C56EDC421C68A9B00D9159E /* JSQLocationMediaItem.m in Sources */,
 				EE7E77CB1B737FF900959AD8 /* SBJsonParser.m in Sources */,
 				3C56EDC121C68A9B00D9159E /* JSQMessagesMediaViewBubbleImageMasker.m in Sources */,

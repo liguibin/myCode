@@ -7,10 +7,13 @@
 //
 
 #import "MZTableApiViewController.h"
+#import "MZVideoListObject.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MZProfileViewController : MZTableApiViewController
+
+@property (nonatomic, retain, readonly) MZVideoListInfoObject *videoListInfoObject;
 
 @end
 

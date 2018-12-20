@@ -9,13 +9,14 @@
 #import "MZProfileViewController.h"
 #import "MZSettingViewController.h"
 #import "MZProfileHeaderView.h"
-#import "MZVideoListObject.h"
+#import "MZUserProfileController.h"
 
 @interface MZProfileViewController ()
 
 @property (nonatomic, strong) UIImageView *bgView;
 @property (nonatomic, assign) CGRect originalFrame;
 @property (nonatomic, strong) MZProfileHeaderView *tableHeaderView;
+@property (nonatomic, retain) MZVideoListInfoObject *videoListInfoObject;
 
 @end
 
@@ -23,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(clickLeftBarButtonItem)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(clickRightBarButtonItem)];
     [self addTableViewHeader];
 }
@@ -45,11 +47,22 @@
 {
     [super requestDidFinishLoad:data];
     if ([self arrangedObjects] && [self countOfArrangedObjects]) {
-        id headerDic = [[self arrangedObjects] firstObject];
-        if (headerDic && [headerDic isKindOfClass:[NSDictionary class]]) {
-            [self.tableHeaderView setObjectWithObejct:headerDic];
+        id object = [[self arrangedObjects] firstObject];
+        if (object && [object isKindOfClass:[NSDictionary class]]) {
+            if (!self.videoListInfoObject) {
+                self.videoListInfoObject = [MZVideoListInfoObject new];
+            }
+            if (object && [self.videoListInfoObject parseData:object]) {
+                [self.tableHeaderView setObjectWithObejct:object];
+            }
         }
     }
+}
+
+- (void)clickLeftBarButtonItem
+{
+    MZUserProfileController *userProfileController = [MZUserProfileController new];
+    [self.navigationController pushViewController:userProfileController animated:YES];
 }
 
 - (void)clickRightBarButtonItem
@@ -71,12 +84,22 @@
 {
     [super scrollViewDidScroll:scrollView];
     CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY < 0) {
-        CGRect rect = self.tableHeaderView.backgroundView.frame;
-        rect.origin.y = offsetY;
-        rect.size.height = self.tableHeaderView.backgroundView.height - offsetY;
+//    if (offsetY < 0) {
+//        CGRect rect = self.tableHeaderView.frame;
+//        rect.origin.y = offsetY;
+//        rect.size.height = self.tableHeaderView.height - offsetY;
+//        self.tableHeaderView.backgroundView.frame = rect;
+//    }
+    if (offsetY < 0)
+    {
+        CGRect rect = self.tableHeaderView.frame;
+        //下拉的偏移量;
+        CGFloat offsetY = (scrollView.contentOffset.y + scrollView.contentInset.top) * -1;
+        rect.origin.y = -offsetY * 1;
+        rect.origin.x = -offsetY / 2;
+        rect.size.width = self.tableHeaderView.width + offsetY;
+        rect.size.height = 200 + offsetY;
         self.tableHeaderView.backgroundView.frame = rect;
-        NSLog(@"%f %f", rect.size.width, rect.size.height);
     }
 }
 

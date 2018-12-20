@@ -34,6 +34,7 @@
 
 - (void)createSubView
 {
+    self.backgroundColor = [UIColor redColor];
     self.backgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
     self.backgroundView.clipsToBounds = YES;
     self.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
